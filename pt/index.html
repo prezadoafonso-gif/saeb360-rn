@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saeb360 RN - Sistema de Avaliação da Educação Básica do Rio Grande do Norte</title>
+<meta name="description" content="Acompanhamento 360° dos resultados do SAEB, IDEB, ICA e SIMAIS para todas as escolas, redes e municípios do Rio Grande do Norte.">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-top">
+    <div class="logo">
+      <div class="logo-icon">360</div>
+      <div>
+        <div>Saeb360 <span style="opacity:0.8;font-weight:400;">RN</span></div>
+        <div class="logo-sub" data-i18n="tagline">Sistema de Avaliação da Educação Básica do Rio Grande do Norte</div>
+      </div>
+    </div>
+    <div class="lang-switch">
+      <a href="pt/index.html" class="lang-btn active" data-lang="pt" onclick="setLanguage('pt'); return false;">PT</a>
+      <a href="en/index.html" class="lang-btn" data-lang="en" onclick="setLanguage('en'); return false;">EN</a>
+      <a href="es/index.html" class="lang-btn" data-lang="es" onclick="setLanguage('es'); return false;">ES</a>
+    </div>
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+  </div>
+  <nav class="nav-main">
+    <div class="nav-container">
+      <a href="index.html" class="nav-link active" data-i18n="nav.home">Início</a>
+      <a href="#etapas" class="nav-link" data-i18n="nav.etapas">Etapas</a>
+      <a href="#busca" class="nav-link" data-i18n="nav.escola">Buscar Escola</a>
+      <a href="#equidade" class="nav-link" data-i18n="nav.equidade">Equidade</a>
+      <a href="#noticias" class="nav-link" data-i18n="nav.noticias">Notícias</a>
+      <a href="pages/metodologia.html" class="nav-link" data-i18n="nav.metodologia">Metodologia</a>
+      <a href="pages/sobre.html" class="nav-link" data-i18n="nav.sobre">Sobre</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-container">
+    <h1 data-i18n="hero.title">Acompanhamento <span class="highlight">360°</span> da Educação do RN</h1>
+    <p class="hero-subtitle" data-i18n="hero.subtitle">Resultados do SAEB, IDEB, ICA e SIMAIS para todas as escolas, redes e municípios do Rio Grande do Norte. Dados, análises e proposições para uma educação de qualidade e equidade.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="#etapas" class="btn btn-primary" data-i18n="hero.cta_primary">Explorar Resultados</a>
+      <a href="#busca" class="btn btn-outline" data-i18n="hero.cta_secondary">Buscar Escola</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-number">1.921</span>
+        <span class="hero-stat-label" data-i18n="hero.stats.escolas">Escolas Avaliadas</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">167</span>
+        <span class="hero-stat-label" data-i18n="hero.stats.municipios">Municípios</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">7</span>
+        <span class="hero-stat-label" data-i18n="hero.stats.diretorias">Diretorias</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">4</span>
+        <span class="hero-stat-label" data-i18n="hero.stats.etapas">Etapas Monitoradas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUSCA POR ESCOLA -->
+<section class="section" id="busca" style="background:var(--branco);">
+  <div class="container">
+    <h2 class="section-title" data-i18n="busca.title">
+      <span class="icon">🔍</span> Buscar Escola
+    </h2>
+    <p class="section-subtitle" data-i18n="busca.label">Encontre sua escola e veja a ficha de diagnóstico completa</p>
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" class="search-input" id="search-input" data-i18n="busca.placeholder" placeholder="Digite o nome da escola, código INEP ou município...">
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ETAPAS AVALIADAS -->
+<section class="section" id="etapas">
+  <div class="container">
+    <h2 class="section-title" data-i18n="etapas.title">
+      <span class="icon">📚</span> Etapas Avaliadas
+    </h2>
+    <p class="section-subtitle" data-i18n="etapas.subtitle">Acompanhe os resultados do SAEB e IDEB por etapa de ensino, com evolução histórica, padrões de desempenho e análise de equidade.</p>
+    <div class="card-grid" id="etapas-container"></div>
+  </div>
+</section>
+
+<!-- GRÁFICOS - EVOLUÇÃO IDEB -->
+<section class="section" style="background:var(--branco);">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="icon">📈</span> Evolução do IDEB no RN
+    </h2>
+    <p class="section-subtitle">Índice de Desenvolvimento da Educação Básica - Rede Pública do Rio Grande do Norte (2017-2025)</p>
+    <div class="chart-container">
+      <canvas id="chart-ideb-evolution" height="120"></canvas>
+    </div>
+    <div class="alert alert-info">
+      <strong>Nota:</strong> O IDEB 2025 é estimado com base nos resultados preliminares do SAEB 2025 e nas taxas de aprovação do Sigeduc/SEEC-RN. Divulgação oficial do INEP prevista para 08/06/2026. Dados de 2021 devem ser interpretados com cautela devido à pandemia (menor participação e aprovações atípicas).
+    </div>
+  </div>
+</section>
+
+<!-- GRÁFICOS - ABAIXO DO BÁSICO -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="icon">🎯</span> Redução do "Abaixo do Básico"
+    </h2>
+    <p class="section-subtitle">Evolução do percentual de estudantes no padrão "Abaixo do Básico" - Rede Pública do RN</p>
+    <div class="chart-container">
+      <canvas id="chart-abaixo-basico" height="120"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- MAPA INTERATIVO -->
+<section class="section" style="background:var(--branco);">
+  <div class="container">
+    <h2 class="section-title" data-i18n="mapa.title">
+      <span class="icon">🗺️</span> Mapa Interativo do RN
+    </h2>
+    <p class="section-subtitle" data-i18n="mapa.subtitle">Explore os resultados por município. Clique para ver detalhes de escolas, redes e evolução.</p>
+    <div id="map-rn"></div>
+  </div>
+</section>
+
+<!-- EQUIDADE EDUCACIONAL -->
+<section class="section" id="equidade">
+  <div class="container">
+    <h2 class="section-title" data-i18n="equidade.title">
+      <span class="icon">⚖️</span> Equidade Educacional
+    </h2>
+    <p class="section-subtitle" data-i18n="equidade.subtitle">Reduzir desigualdades é garantir qualidade para todos. Análise de gaps raciais, de gênero, socioeconômicos e territoriais.</p>
+    <div class="card-grid" id="equidade-preview"></div>
+    <div class="chart-container mt-3">
+      <canvas id="chart-equidade-gaps" height="120"></canvas>
+    </div>
+    <div class="text-center mt-3">
+      <a href="pages/equidade.html" class="btn btn-secondary" data-i18n="equidade.cta">Ver análise completa de equidade →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PADRÕES DE DESEMPENHO -->
+<section class="section" style="background:var(--branco);">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="icon">🎓</span> Padrões de Desempenho - 5º Ano EF
+    </h2>
+    <p class="section-subtitle">Distribuição dos estudantes da rede estadual nos padrões de desempenho do SAEB 2025 em Língua Portuguesa</p>
+    <div style="max-width:500px;margin:0 auto;">
+      <div class="chart-container">
+        <canvas id="chart-padroes-5ef" height="200"></canvas>
+      </div>
+    </div>
+    <div class="card-grid" style="margin-top:32px;">
+      <div class="card">
+        <div class="card-body" style="text-align:center;">
+          <div class="card-metric-value" style="color:#cc3300;font-size:2.5rem;">29,9%</div>
+          <div class="card-metric-label">Abaixo do Básico (LP)</div>
+          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Redução de 2,1 pp desde 2023</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" style="text-align:center;">
+          <div class="card-metric-value" style="color:#ffcc00;font-size:2.5rem;">36,3%</div>
+          <div class="card-metric-label">Básico (LP)</div>
+          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Base de transição para adequado</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" style="text-align:center;">
+          <div class="card-metric-value" style="color:#009639;font-size:2.5rem;">25,5%</div>
+          <div class="card-metric-label">Adequado (LP)</div>
+          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Aprendizagem esperada para a etapa</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" style="text-align:center;">
+          <div class="card-metric-value" style="color:#003366;font-size:2.5rem;">8,2%</div>
+          <div class="card-metric-label">Avançado (LP)</div>
+          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Supera expectativas da etapa</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTÍCIAS GERADAS -->
+<section class="section" id="noticias">
+  <div class="container">
+    <h2 class="section-title" data-i18n="noticias.title">
+      <span class="icon">📰</span> Notícias e Análises
+    </h2>
+    <p class="section-subtitle" data-i18n="noticias.subtitle">Destaques gerados automaticamente a partir dos dados do SAEB, SIMAIS e IDEB do RN.</p>
+    <div class="news-grid" id="news-container"></div>
+    <div class="text-center mt-3">
+      <a href="pages/noticias.html" class="btn btn-primary" data-i18n="noticias.cta">Ver todas as notícias →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CASOS DE DESTAQUE -->
+<section class="section" style="background:linear-gradient(135deg, #f5f7fa 0%, #e0e5ec 100%);">
+  <div class="container">
+    <h2 class="section-title" data-i18n="destaques.title">
+      <span class="icon">⭐</span> Casos de Destaque
+    </h2>
+    <p class="section-subtitle" data-i18n="destaques.subtitle">Escolas, redes e municípios que se destacaram por qualidade, equidade, crescimento e boas práticas.</p>
+    <div class="alert alert-success" style="margin-bottom:24px;">
+      <span data-i18n="destaques.criterios">Critérios de destaque: redução do Abaixo do Básico, equilíbrio entre padrões, crescimento sustentado, redução de desigualdades e engajamento da comunidade.</span>
+    </div>
+    <div class="card-grid" id="destaques-container"></div>
+  </div>
+</section>
+
+<!-- ANÁLISES COMPARATIVAS -->
+<section class="section" style="background:var(--branco);">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="icon">🔬</span> Análises Comparativas
+    </h2>
+    <p class="section-subtitle">Comparativos territoriais, entre redes e entre contextos urbano/rural</p>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="metro">Metropolitana vs Interior</button>
+      <button class="tab-btn" data-tab="rede">Redes Maiores vs Menores</button>
+      <button class="tab-btn" data-tab="rural">Urbano vs Rural</button>
+    </div>
+    <div class="tab-content active" data-tab="metro">
+      <div class="card">
+        <div class="card-body">
+          <h3>Região Metropolitana vs Não-Metropolitana</h3>
+          <p>A Região Metropolitana de Natal (DRE 01) concentra escolas com maior infraestrutura e acesso a recursos pedagógicos, mas também enfrenta desafios de vulnerabilidade socioeconômica em alguns territórios. Dados do SIMAIS 2025 indicam que municípios não-metropolitanos do Seridó e do Oeste apresentam proficiências médias inferiores em 15-20 pontos no 5º ano, embora redes menores como Caicó e Currais Novos mostrem taxas de participação superiores à média estadual.</p>
+          <div class="card-grid" style="margin-top:20px;">
+            <div style="background:var(--cinza-claro);padding:16px;border-radius:8px;">
+              <strong>Metropolitana</strong><br>
+              <span style="font-size:2rem;font-weight:800;color:var(--azul-rn);">5,2</span>
+              <span style="font-size:0.8rem;color:#666;">IDEB médio 5º EF (2023)</span>
+            </div>
+            <div style="background:var(--cinza-claro);padding:16px;border-radius:8px;">
+              <strong>Não-Metropolitana</strong><br>
+              <span style="font-size:2rem;font-weight:800;color:var(--azul-rn);">4,6</span>
+              <span style="font-size:0.8rem;color:#666;">IDEB médio 5º EF (2023)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-content" data-tab="rede">
+      <div class="card">
+        <div class="card-body">
+          <h3>Redes Maiores vs Redes Menores</h3>
+          <p>Redes municipais maiores (Natal, Mossoró, Parnamirim) tendem a ter mais variabilidade interna de desempenho, com escolas de alto padrão coexistindo com unidades em dificuldade. Redes menores (Ipueira, Acari, Lajes Pintadas) apresentam maior homogeneidade, podendo ser mais ágeis na implementação de políticas pedagógicas uniformes. O IDEB de Acari (6,8 em 2019, Anos Iniciais) é case de excelência em rede pequena.</p>
+        </div>
+      </div>
+    </div>
+    <div class="tab-content" data-tab="rural">
+      <div class="card">
+        <div class="card-body">
+          <h3>Urbano vs Rural</h3>
+          <p>Escolas em localização rural no RN historicamente apresentam proficiência 20-30 pontos inferior às urbanas no 5º ano, principalmente em Matemática. No entanto, a política de transporte escolar e a universalização do ensino integral em alguns municípios têm reduzido essa distância. O SIMAIS 2025 mostra que escolas rurais com professores estabilizados e gestão participativa superam a média urbana de outras redes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPÓSICOES DE INTERVENÇÃO -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="icon">💡</span> Proposições de Intervenção
+    </h2>
+    <p class="section-subtitle">Baseadas em dados do INEP, SEEC-RN, BNCC e literatura sobre educação</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header">
+          <span class="badge badge-af">Matemática 5º EF</span>
+        </div>
+        <div class="card-body">
+          <h3>Reduzir "Abaixo do Básico" em MT</h3>
+          <p><strong>Situação:</strong> 43,3% dos estudantes da rede estadual no 5º ano estão no padrão "Abaixo do Básico" em Matemática.</p>
+          <ul style="font-size:0.85rem;color:#666;margin-top:8px;padding-left:16px;">
+            <li>Implementar "Números e Operações" como eixo estruturante no 1º ao 3º ano (BNCC EF01MA01 a EF03MA08)</li>
+            <li>Realizar diagnóstico formativo em Matemática no início de cada bimestre</li>
+            <li>Capacitar professores em resolução de problemas e modelagem matemática</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="badge badge-af">Gap Racial 9º EF</span>
+        </div>
+        <div class="card-body">
+          <h3>Equidade Racial no 9º Ano</h3>
+          <p><strong>Situação:</strong> Gap de 13 pontos de proficiência entre estudantes PPI e brancos/amarelos no 9º ano de LP.</p>
+          <ul style="font-size:0.85rem;color:#666;margin-top:8px;padding-left:16px;">
+            <li>Adotar biblioteca com acervo afro-indígena e literatura produzida no RN</li>
+            <li>Formar professorado em didática antirracista e práticas de letramento crítico</li>
+            <li>Criar programa de tutoria entre estudantes do 3º EM e 9º EF</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="badge badge-em">Ensino Médio</span>
+        </div>
+        <div class="card-body">
+          <h3>Matemática no 3º EM</h3>
+          <p><strong>Situação:</strong> 46,4% dos estudantes do 3º EM no padrão "Abaixo do Básico" em Matemática.</p>
+          <ul style="font-size:0.85rem;color:#666;margin-top:8px;padding-left:16px;">
+            <li>Estabelecer "matemática de recuperação" no 1º EM para alunos com proficiência &lt;250</li>
+            <li>Integrar Matemática ao componente de vida e saúde (água, energia, finanças)</li>
+            <li>Utilizar plataformas adaptativas (Khan Academy, Brasil Mais Escola) no contraturno</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-section">
+      <h4 data-i18n="footer.fontes">Fontes de Dados</h4>
+      <a href="https://www.gov.br/inep/pt-br" target="_blank">INEP - Portal Oficial</a>
+      <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb" target="_blank">SAEB - INEP</a>
+      <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb" target="_blank">IDEB - INEP</a>
+      <a href="https://qedu.org.br/uf/24-rio-grande-do-norte" target="_blank">Qedu - RN</a>
+      <a href="https://todospelaeducacao.org.br" target="_blank">Todos pela Educação</a>
+    </div>
+    <div class="footer-section">
+      <h4 data-i18n="footer.creditos">Créditos</h4>
+      <a href="#">SUAVE/SEEC/RN</a>
+      <a href="#">Afonso Gomes Ferreira Filho</a>
+      <a href="#">SIMAIS - SEEC/RN</a>
+      <a href="#">BNCC - MEC</a>
+    </div>
+    <div class="footer-section">
+      <h4 data-i18n="footer.contato">Contato</h4>
+      <a href="#">Saeb360 RN</a>
+      <a href="pages/metodologia.html" data-i18n="nav.metodologia">Metodologia</a>
+      <a href="pages/sobre.html" data-i18n="nav.sobre">Sobre</a>
+    </div>
+  </div>
+  <div class="footer-bottom" data-i18n="footer.legal">
+    Todos os dados são públicos, conforme Lei de Acesso à Informação (LAI). Fontes: INEP, SEEC-RN, IBGE, Qedu, Todos pela Educação.
+  </div>
+</footer>
+
+<!-- MODAL ESCOLA -->
+<div id="escola-modal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:2000;align-items:center;justify-content:center;padding:24px;">
+  <div style="background:var(--branco);border-radius:var(--radius);max-width:800px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--cinza-medio);">
+      <h3 style="font-size:1.2rem;color:var(--azul-rn);">Ficha da Escola</h3>
+      <button onclick="closeModal()" style="background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--cinza-texto);">×</button>
+    </div>
+    <div id="escola-modal-body" style="padding:24px;"></div>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,284 @@
+{
+  "meta": {
+    "nome_projeto": "Saeb360 RN",
+    "versao": "1.0.0",
+    "atualizado_em": "2025-06-24",
+    "fontes": [
+      "INEP - SAEB/IDEB 2017, 2019, 2021, 2023, 2025 (preliminar)",
+      "SEEC-RN - SIMAIS Alfa e Somativa 2025",
+      "SEEC-RN - IDERN 2024",
+      "Sigeduc/SEEC-RN - Taxas de Aprovação 2025",
+      "Qedu.org.br - Dados Educacionais RN",
+      "Todos pela Educação - Panorama RN 2023",
+      "IBGE - GeoJSON municípios RN"
+    ],
+    "responsavel": "SUAVE/SEEC/RN - Afonso Gomes Ferreira Filho",
+    "nota_2025": "Resultados SAEB 2025 preliminares. IDEB estimado. Divulgação oficial INEP prevista para 08/06/2026."
+  },
+
+  "panorama_estado": {
+    "uf": "Rio Grande do Norte",
+    "sigla": "RN",
+    "n_municipios": 167,
+    "n_escolas_estaduais_avaliadas_2025": {"5EF": 177, "9EF": 248, "3EM": 308},
+    "n_escolas_municipais_avaliadas_2025": {"5EF": 737, "9EF": 451, "3EM": 0},
+    "ideb_historico_rede_publica": {
+      "anos_iniciais": [
+        {"ano": 2017, "ideb": 4.3, "meta": 4.5},
+        {"ano": 2019, "ideb": 4.7, "meta": 5.0},
+        {"ano": 2021, "ideb": 4.8, "meta": 5.5},
+        {"ano": 2023, "ideb": 5.0, "meta": 5.5},
+        {"ano": 2025, "ideb": 5.3, "meta": 6.0, "estimado": true}
+      ],
+      "anos_finais": [
+        {"ano": 2017, "ideb": 3.2, "meta": 3.5},
+        {"ano": 2019, "ideb": 3.6, "meta": 4.0},
+        {"ano": 2021, "ideb": 3.7, "meta": 4.5},
+        {"ano": 2023, "ideb": 3.7, "meta": 4.5},
+        {"ano": 2025, "ideb": 4.1, "meta": 5.0, "estimado": true}
+      ],
+      "ensino_medio": [
+        {"ano": 2017, "ideb": 2.8, "meta": 3.0},
+        {"ano": 2019, "ideb": 3.2, "meta": 3.5},
+        {"ano": 2021, "ideb": 3.2, "meta": 4.0},
+        {"ano": 2023, "ideb": 3.2, "meta": 4.0},
+        {"ano": 2025, "ideb": 3.9, "meta": 4.5, "estimado": true}
+      ]
+    },
+    "saeb_proficiencia_historico": {
+      "5EF": {
+        "LP": [{"ano": 2017, "pts": 185.2}, {"ano": 2019, "pts": 188.5}, {"ano": 2021, "pts": 189.0}, {"ano": 2023, "pts": 195.0}, {"ano": 2025, "pts": 204.0, "estimado": true}],
+        "MT": [{"ano": 2017, "pts": 191.0}, {"ano": 2019, "pts": 194.3}, {"ano": 2021, "pts": 196.0}, {"ano": 2023, "pts": 199.1}, {"ano": 2025, "pts": 211.2, "estimado": true}]
+      },
+      "9EF": {
+        "LP": [{"ano": 2017, "pts": 230.0}, {"ano": 2019, "pts": 233.0}, {"ano": 2021, "pts": 235.0}, {"ano": 2023, "pts": 238.6}, {"ano": 2025, "pts": 246.2, "estimado": true}],
+        "MT": [{"ano": 2017, "pts": 232.0}, {"ano": 2019, "pts": 235.0}, {"ano": 2021, "pts": 236.0}, {"ano": 2023, "pts": 238.6}, {"ano": 2025, "pts": 241.9, "estimado": true}]
+      },
+      "3EM": {
+        "LP": [{"ano": 2017, "pts": 245.0}, {"ano": 2019, "pts": 248.0}, {"ano": 2021, "pts": 250.0}, {"ano": 2023, "pts": 254.3}, {"ano": 2025, "pts": 264.6, "estimado": true}],
+        "MT": [{"ano": 2017, "pts": 248.0}, {"ano": 2019, "pts": 251.0}, {"ano": 2021, "pts": 253.0}, {"ano": 2023, "pts": 257.3}, {"ano": 2025, "pts": 257.4, "estimado": true}]
+      }
+    },
+    "comparativo_brasil_2023": {
+      "ideb_ai_rn": 5.0, "ideb_ai_br": 5.8,
+      "ideb_af_rn": 3.7, "ideb_af_br": 4.6,
+      "ideb_em_rn": 3.2, "ideb_em_br": 3.8
+    }
+  },
+
+  "padroes_desempenho": {
+    "nomenclatura_inep": ["Abaixo do Básico", "Básico", "Adequado", "Avançado"],
+    "nomenclatura_simais": ["Abaixo do Básico", "Básico", "Proficiente", "Avançado"],
+    "cortes_saeb2025": {
+      "5EF": {
+        "LP": {"Abaixo do Básico": "≤179", "Básico": "180-219", "Adequado": "≥220", "Avancado": "sem corte divulgado"},
+        "MT": {"Abaixo do Básico": "≤204", "Básico": "205-244", "Adequado": "245-284", "Avancado": "≥285"}
+      },
+      "9EF": {
+        "LP": {"Abaixo do Básico": "≤224", "Básico": "225-274", "Adequado": "275-324", "Avancado": "≥325"},
+        "MT": {"Abaixo do Básico": "≤224", "Básico": "225-299", "Adequado": "300-349", "Avancado": "≥350"}
+      },
+      "3EM": {
+        "LP": {"Abaixo do Básico": "≤249", "Básico": "250-299", "Adequado": "300-349", "Avancado": "≥350"},
+        "MT": {"Abaixo do Básico": "≤249", "Básico": "250-299", "Adequado": "300-349", "Avancado": "≥350"}
+      }
+    },
+    "mapeamento_nivel_padrao": {
+      "5EF_LP": {"Abaixo do Básico": [0,1,2], "Básico": [3,4], "Adequado": [5,6], "Avancado": [7,8,9]},
+      "5EF_MT": {"Abaixo do Básico": [0,1,2,3], "Básico": [4,5], "Adequado": [6,7], "Avancado": [8,9,10]},
+      "9EF_LP": {"Abaixo do Básico": [0,1], "Básico": [2,3], "Adequado": [4,5], "Avancado": [6,7,8]},
+      "9EF_MT": {"Abaixo do Básico": [0,1], "Básico": [2,3,4], "Adequado": [5,6], "Avancado": [7,8,9]},
+      "3EM_LP": {"Abaixo do Básico": [0,1], "Básico": [2,3], "Adequado": [4,5], "Avancado": [6,7,8]},
+      "3EM_MT": {"Abaixo do Básico": [0,1], "Básico": [2,3], "Adequado": [4,5], "Avancado": [6,7,8,9]}
+    }
+  },
+
+  "equidade": {
+    "estadual_2025": {
+      "5EF": {
+        "LP": {"Abaixo": 29.9, "Basico": 36.3, "Adequado": 25.5, "Avancado": 8.2},
+        "MT": {"Abaixo": 43.3, "Basico": 34.6, "Adequado": 17.5, "Avancado": 4.6}
+      },
+      "9EF": {
+        "LP": {"Abaixo": 35.8, "Basico": 35.3, "Adequado": 23.9, "Avancado": 5.2},
+        "MT": {"Abaixo": 38.3, "Basico": 51.5, "Adequado": 8.6, "Avancado": 1.7}
+      },
+      "3EM": {
+        "LP": {"Abaixo": 39.3, "Basico": 34.8, "Adequado": 22.3, "Avancado": 3.7},
+        "MT": {"Abaixo": 46.4, "Basico": 39.6, "Adequado": 11.3, "Avancado": 2.6}
+      }
+    },
+    "gaps_simais_contextual_2025": {
+      "5EF": {
+        "racial_LP": 5.9, "racial_MT": 6.1,
+        "genero_LP": 12.2, "genero_MT": -4.9,
+        "NSE_baixo_pct": 38.1
+      },
+      "9EF": {
+        "racial_LP": 13.0, "racial_MT": 8.8,
+        "genero_LP": 14.7, "genero_MT": -6.5,
+        "NSE_baixo_pct": 40.1
+      },
+      "3EM": {
+        "racial_LP": 11.1, "racial_MT": 7.8,
+        "genero_LP": 14.6, "genero_MT": -7.6,
+        "NSE_baixo_pct": 64.4
+      }
+    },
+    "evolucao_abaixo_basico_rede_publica": {
+      "5EF_LP": [{"ano": 2017, "pct": 38.5}, {"ano": 2019, "pct": 36.0}, {"ano": 2021, "pct": 35.0}, {"ano": 2023, "pct": 32.0}, {"ano": 2025, "pct": 29.9, "estimado": true}],
+      "5EF_MT": [{"ano": 2017, "pct": 52.0}, {"ano": 2019, "pct": 48.0}, {"ano": 2021, "pct": 47.0}, {"ano": 2023, "pct": 45.0}, {"ano": 2025, "pct": 43.3, "estimado": true}],
+      "9EF_LP": [{"ano": 2017, "pct": 42.0}, {"ano": 2019, "pct": 40.0}, {"ano": 2021, "pct": 38.0}, {"ano": 2023, "pct": 37.0}, {"ano": 2025, "pct": 35.8, "estimado": true}],
+      "9EF_MT": [{"ano": 2017, "pct": 45.0}, {"ano": 2019, "pct": 43.0}, {"ano": 2021, "pct": 42.0}, {"ano": 2023, "pct": 40.0}, {"ano": 2025, "pct": 38.3, "estimado": true}]
+    }
+  },
+
+  "diretorias_educacao": [
+    {"id": "01", "nome": "Diretoria Regional de Educação de Natal", "sigla": "DREN", "tipo": "metropolitana"},
+    {"id": "02", "nome": "Diretoria Regional de Educação de Mossoró", "sigla": "DREMO", "tipo": "não-metropolitana"},
+    {"id": "03", "nome": "Diretoria Regional de Educação de Caicó", "sigla": "DRECA", "tipo": "não-metropolitana"},
+    {"id": "04", "nome": "Diretoria Regional de Educação de Currais Novos", "sigla": "DRECN", "tipo": "não-metropolitana"},
+    {"id": "05", "nome": "Diretoria Regional de Educação de Apodi", "sigla": "DREAP", "tipo": "não-metropolitana"},
+    {"id": "06", "nome": "Diretoria Regional de Educação de Pau dos Ferros", "sigla": "DREPF", "tipo": "não-metropolitana"},
+    {"id": "07", "nome": "Diretoria Regional de Educação de João Câmara", "sigla": "DREJC", "tipo": "não-metropolitana"}
+  ],
+
+  "noticias_geradas": [
+    {
+      "id": 1,
+      "data": "2025-06-24",
+      "titulo_pt": "RN avança na redução do 'Abaixo do Básico' no 5º ano: queda de 8,6 pontos percentuais desde 2017",
+      "titulo_en": "RN advances in reducing 'Below Basic' in 5th grade: 8.6 percentage point drop since 2017",
+      "titulo_es": "RN avanza en la reducción de 'Por Debajo del Básico' en 5º año: caída de 8,6 puntos porcentuales desde 2017",
+      "resumo_pt": "A rede pública do Rio Grande do Norte registrou 29,9% de estudantes no padrão 'Abaixo do Básico' em Língua Portuguesa no 5º ano em 2025, contra 38,5% em 2017. O avanço reflete esforços de alfabetização e reforço pedagógico, mas desafios persistem em Matemática (43,3% no AB).",
+      "resumo_en": "The public school network in Rio Grande do Norte recorded 29.9% of students in the 'Below Basic' standard in Portuguese in 5th grade in 2025, compared to 38.5% in 2017. The advance reflects literacy and pedagogical reinforcement efforts, but challenges persist in Mathematics (43.3% in BB).",
+      "resumo_es": "La red pública de Río Grande del Norte registró 29,9% de estudantes en el patrón 'Por Debajo del Básico' en Lengua Portuguesa en 5º año en 2025, frente al 38,5% en 2017. El avance refleja esfuerzos de alfabetización y refuerzo pedagógico, pero persisten desafíos en Matemáticas (43,3% en DB).",
+      "categoria": "equidade",
+      "tags": ["abaixo do básico", "5º ano", "evolução", "equidade"]
+    },
+    {
+      "id": 2,
+      "data": "2025-06-24",
+      "titulo_pt": "IDEB estimado do RN cresce 0,7 ponto em Anos Finais entre 2023 e 2025, maior alta da série",
+      "titulo_en": "RN's estimated IDEB grows 0.7 points in Final Years between 2023 and 2025, highest in the series",
+      "titulo_es": "El IDEB estimado de RN crece 0,7 puntos en Años Finales entre 2023 y 2025, la mayor alza de la serie",
+      "resumo_pt": "O IDEB estimado da rede estadual no 9º ano saltou de 3,7 (2023) para 4,1 (2025), impulsionado tanto pela melhora de proficiência (+7,6 pontos em LP) quanto pelo incremento da taxa de aprovação (de 80% para 92%). A recuperação pós-pandemia mostra sinais consistentes.",
+      "resumo_en": "The estimated IDEB for the state network in 9th grade jumped from 3.7 (2023) to 4.1 (2025), driven by both proficiency improvement (+7.6 points in Portuguese) and increased approval rate (from 80% to 92%). Post-pandemic recovery shows consistent signs.",
+      "resumo_es": "El IDEB estimado de la red estatal en 9º año saltó de 3,7 (2023) a 4,1 (2025), impulsado tanto por la mejora de la proficiency (+7,6 puntos en Lengua Portuguesa) como por el incremento de la tasa de aprobación (del 80% al 92%). La recuperación pospandemia muestra señales consistentes.",
+      "categoria": "resultados",
+      "tags": ["ideb", "9º ano", "crescimento", "pós-pandemia"]
+    },
+    {
+      "id": 3,
+      "data": "2025-06-24",
+      "titulo_pt": "Gap racial de 13 pontos no 9º ano de LP alerta para desigualdade educacional no RN",
+      "titulo_en": "Racial gap of 13 points in 9th grade Portuguese alerts to educational inequality in RN",
+      "titulo_es": "Brecha racial de 13 puntos en 9º año de Lengua Portuguesa alerta sobre desigualdad educativa en RN",
+      "resumo_pt": "Dados do SIMAIS Contextual 2025 revelam que estudantes pretos, pardos e indígenas do 9º ano têm proficiência média de 226,8 pontos em LP, contra 239,7 de brancos e amarelos. A diferença de 13 pontos é a maior da série SIMAIS e demanda políticas afirmativas pedagógicas.",
+      "resumo_en": "SIMAIS Contextual 2025 data reveals that black, brown and indigenous 9th grade students have an average proficiency of 226.8 points in Portuguese, compared to 239.7 for white and Asian students. The 13-point difference is the largest in the SIMAIS series and demands affirmative pedagogical policies.",
+      "resumo_es": "Los datos del SIMAIS Contextual 2025 revelan que los estudiantes negros, pardos e indígenas de 9º año tienen una proficiency media de 226,8 puntos en Lengua Portuguesa, frente a 239,7 de blancos y amarillos. La diferencia de 13 puntos es la mayor de la serie SIMAIS y demanda políticas pedagógicas afirmativas.",
+      "categoria": "equidade",
+      "tags": ["gap racial", "9º ano", "desigualdade", "SIMAIS"]
+    },
+    {
+      "id": 4,
+      "data": "2025-06-24",
+      "titulo_pt": "Matemática do 3º EM: 46,4% no 'Abaixo do Básico' é o maior desafio da educação média no RN",
+      "titulo_en": "3rd year HS Mathematics: 46.4% in 'Below Basic' is the biggest challenge of secondary education in RN",
+      "titulo_es": "Matemáticas de 3º año EM: 46,4% en 'Por Debajo del Básico' es el mayor desafío de la educación media en RN",
+      "resumo_pt": "O Ensino Médio matricial do RN mantém seu gargalo histórico em Matemática, com quase metade dos estudantes no padrão mais baixo. A proficiência média de 257,4 pontos está estagnada desde 2023, indicando que ganhos de fluxo escolar não se traduziram em aprendizagem efetiva nesta área.",
+      "resumo_en": "RN's regular high school maintains its historical bottleneck in Mathematics, with nearly half of students in the lowest standard. The average proficiency of 257.4 points has been stagnant since 2023, indicating that gains in school flow rates have not translated into effective learning in this area.",
+      "resumo_es": "La educación media matricial de RN mantiene su cuello de botella histórico en Matemáticas, con casi la mitad de los estudiantes en el patrón más bajo. La proficiency media de 257,4 puntos está estancada desde 2023, indicando que las ganancias en las tasas de flujo escolar no se tradujeron en aprendizaje efectivo en esta área.",
+      "categoria": "desafio",
+      "tags": ["ensino médio", "matemática", "abaixo do básico", "desafio"]
+    }
+  ],
+
+  "destaques_qualitativos": {
+    "criterios": [
+      "Maior redução do percentual de estudantes no padrão 'Abaixo do Básico'",
+      "Melhor distribuição equilibrada entre os quatro padrões de desempenho",
+      "Maior crescimento do IDEB em relação à edição anterior",
+      "Maior crescimento da proficiência média em LP e/ou MT",
+      "Melhor desempenho considerando contexto de vulnerabilidade socioeconômica",
+      "Maior redução de gaps de equidade (racial, de gênero, NSE)",
+      "Taxa de participação no SAEB superior a 90% (engajamento da comunidade)"
+    ],
+    "casos_estaduais_2025": [
+      {
+        "etapa": "5EF",
+        "tipo": "melhor_reducao_AB",
+        "titulo_pt": "Rede com maior queda no 'Abaixo do Básico' em LP",
+        "descricao_pt": "A rede estadual do RN reduziu o percentual de estudantes no padrão 'Abaixo do Básico' em Língua Portuguesa do 5º ano de 32% (2023) para 29,9% (2025), uma queda de 2,1 pontos percentuais. O avanço foi impulsionado pelo fortalecimento da alfabetização nos primeiros anos e pela ampliação do acompanhamento pedagógico nas DREs prioritárias.",
+        "metrica": "-2,1 pp no AB (LP)",
+        "pratica": "Acompanhamento pedagógico intensificado nas DREs prioritárias"
+      },
+      {
+        "etapa": "9EF",
+        "tipo": "melhor_crescimento_ideb",
+        "titulo_pt": "Maior crescimento do IDEB em Anos Finais",
+        "descricao_pt": "O IDEB estimado da rede estadual no 9º ano cresceu de 3,7 (2023) para 4,1 (2025), um incremento de 0,4 ponto. Esse crescimento foi resultado conjunto da melhoria de proficiência (+7,6 pontos em LP) e da elevação da taxa de aprovação (de 80% para 92%), mostrando que o avanço foi qualitativo e não apenas de fluxo.",
+        "metrica": "+0,4 ponto de IDEB",
+        "pratica": "Integração entre avaliação diagnóstica e intervenção pedagógica diferenciada"
+      },
+      {
+        "etapa": "3EM",
+        "tipo": "melhor_distribuicao_padroes",
+        "titulo_pt": "Melhor distribuição entre padrões de desempenho em LP",
+        "descricao_pt": "Embora o Ensino Médio ainda concentre desafios, a distribuição dos padrões de desempenho em Língua Portuguesa mostrou leve melhora: o padrão 'Adequado' cresceu de 20% (2023) para 22,3% (2025), enquanto o 'Abaixo do Básico' se manteve estável. Isso indica que mais estudantes estão consolidando habilidades de leitura e interpretação textual.",
+        "metrica": "+2,3 pp no Adequado (LP)",
+        "pratica": "Leitura orientada e análise textual integrada ao currículo"
+      }
+    ]
+  },
+
+  "analises_comparativas": {
+    "metropolitana_vs_nao_metropolitana": {
+      "nota_pt": "A Região Metropolitana de Natal (DRE 01) concentra escolas com maior infraestrutura e acesso a recursos pedagógicos, mas também enfrenta desafios de vulnerabilidade socioeconômica em alguns territórios. Dados do SIMAIS 2025 indicam que municípios não-metropolitanos do Seridó e do Oeste apresentam proficiências médias inferiores em 15-20 pontos no 5º ano, embora redes menores como Caicó e Currais Novos mostrem taxas de participação superiores à média estadual.",
+      "redes_maiores_vs_menores": {
+        "nota_pt": "Redes municipais maiores (Natal, Mossoró, Parnamirim) tendem a ter mais variabilidade interna de desempenho, com escolas de alto padrão coexistindo com unidades em dificuldade. Redes menores (Ipueira, Acari, Lajes Pintadas) apresentam maior homogeneidade, podendo ser mais ágeis na implementação de políticas pedagógicas uniformes. O IDEB de Acari (6,8 em 2019, Anos Iniciais) é case de excelência em rede pequena.",
+        "exemplo_maior": {"rede": "Natal", "escolas": 350, "variabilidade": "alta", "ideb_2023_ai": 5.2},
+        "exemplo_menor": {"rede": "Acari", "escolas": 8, "variabilidade": "baixa", "ideb_2019_ai": 6.8}
+      },
+      "urbana_vs_rural": {
+        "nota_pt": "Escolas em localização rural no RN historicamente apresentam proficiência 20-30 pontos inferior às urbanas no 5º ano, principalmente em Matemática. No entanto, a política de transporte escolar e a universalização do ensino integral em alguns municípios têm reduzido essa distância. O SIMAIS 2025 mostra que escolas rurais com professores estabilizados e gestão participativa superam a média urbana de outras redes.",
+        "gap_lp_5EF": -18.5,
+        "gap_mt_5EF": -28.3,
+        "exemplo_superacao": {"escola": "Escola Municipal Rural Exemplo", "mun": "Cerro Corá", "lp_pts": 215, "mt_pts": 220, "nota": "Supera média urbana da rede com gestão participativa e professorado estabilizado"}
+      }
+    }
+  },
+
+  "proposicoes_intervencao": {
+    "abaixo_basico_matematica_5EF": {
+      "situacao": "43,3% dos estudantes da rede estadual no 5º ano estão no padrão 'Abaixo do Básico' em Matemática",
+      "causas": ["Falta de consciência numérica nos primeiros anos", "Transição inadequada da alfabetização matemática para operações", "Falta de materiais manipulativos"],
+      "proposicoes": [
+        "Implementar 'Números e Operações' como eixo estruturante no 1º ao 3º ano, com material concreto (BNCC EF01MA01 a EF03MA08)",
+        "Realizar diagnóstico formative em Matemática no início de cada bimestre, com reagrupamento por habilidade",
+        "Capacitar professores dos Anos Iniciais em resolução de problemas e modelagem matemática (SEEC-RN/PNLD Matemática)",
+        "Incentivar aulas de Matemática no contraturno para estudantes no Nível 0-2 do SAEB"
+      ]
+    },
+    "gap_racial_9EF": {
+      "situacao": "Gap de 13 pontos de proficiência entre estudantes PPI e brancos/amarelos no 9º ano de LP",
+      "causas": ["Menor acesso a literatura diversificada", "Currículo pouco contextualizado", "Baixa expectativa do professorado"],
+      "proposicoes": [
+        "Adotar biblioteca com acervo afro-indígena e literatura produzida no RN (Lei 10.639/2003)",
+        "Formar professorado em didática antirracista e práticas de letramento crítico",
+        "Criar programa de tutoria entre estudantes do 3º EM e 9º EF com média superior",
+        "Implementar avaliação de clima escolar por recorte racial (Inep/Questionário do Estudante)"
+      ]
+    },
+    "ensino_medio_matematica": {
+      "situacao": "46,4% dos estudantes do 3º EM no padrão 'Abaixo do Básico' em Matemática",
+      "causas": ["Déficits acumulados dos Anos Iniciais", "Descontinuidade curricular", "Falta de conexão com currículo profissionalizante"],
+      "proposicoes": [
+        "Estabelecer 'matemática de recuperação' no 1º EM para alunos com proficiência <250 no 9º EF",
+        "Integrar Matemática ao componente de vida e saúde (água, energia, finanças pessoais)",
+        "Utilizar plataformas adaptativas (Khan Academy, Brasil Mais Escola) no contraturno",
+        "Avaliar impacto do currículo integrado (EPT + Matemática) nas escolas de tempo integral"
+      ]
+    }
+  }
+}
