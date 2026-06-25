@@ -1,4 +1,4 @@
-# Saeb360 RN - Avaliação Educacional do Rio Grande do Norte
+# Saeb360 RN - Sistema de Avaliação da Educação Básica do Rio Grande do Norte
 
 ## 🌐 Visão Geral
 
@@ -49,6 +49,8 @@ saeb360-rn/
 ---
 
 ## 🚀 Como Publicar no GitHub Pages (Passo a Passo)
+
+> **Você já tem o repositório criado?** Se sim, pule para a seção **"🔄 Como atualizar para a Versão 2.0"** abaixo.
 
 O **GitHub Pages** é um serviço de hospedagem de sites estáticos oferecido gratuitamente pelo GitHub. Como o Saeb360 RN é um site 100% estático (HTML/CSS/JS, sem banco de dados nem backend), ele é ideal para o GitHub Pages.
 
@@ -120,6 +122,77 @@ git push -u origin main
 
 ---
 
+## 🔄 Como atualizar para a Versão 2.0 (se você já tem o site no ar)
+
+Se você já publicou a versão anterior e quer atualizar para a **Versão 2.0** (com dados embutidos, PNE 2026, páginas de etapa funcionais, ficha de diagnóstico completa e créditos atualizados), siga os passos abaixo:
+
+### Passo 1: Apagar os arquivos antigos
+
+1. Acesse seu repositório `saeb360-rn` no GitHub: `https://github.com/prezadoafonso-gif/saeb360-rn`
+2. Clique na aba **"<> Code"** (canto superior esquerdo)
+3. Você verá a lista de arquivos e pastas (index.html, pt/, en/, es/, README.md, etc.)
+4. Para cada arquivo/pasta, clique no nome, depois no ícone de **lixeira** (🗑️) no canto superior direito
+5. Confirme a exclusão digitando o nome do repositório e clicando em **I understand, delete this file**
+6. Repita para **todos** os arquivos e pastas antigos
+7. Após apagar tudo, faça um commit com a mensagem: `Removendo versão antiga para atualização v2.0`
+
+> **Dica**: Se houver muitos arquivos, você pode apagar a pasta `pt/` inteira (e suas subpastas) de uma vez, depois `en/`, `es/`, etc.
+
+### Passo 2: Enviar os arquivos novos (v2.0)
+
+1. No repositório agora vazio (ou após remover os arquivos antigos), clique em **"Add file"** → **"Upload files"**
+2. Clique em **"choose your files"**
+3. No Windows Explorer, navegue até:
+   ```
+   C:\Users\Cliente\OneDrive\Documentos\Kimi\Workspaces\SAEB-RN\saeb360-rn
+   ```
+4. **Selecione TODOS os arquivos e pastas** dentro dessa pasta:
+   - `README.md`
+   - `index.html` (o redirecionador)
+   - `pt/` (pasta inteira, com todos os arquivos)
+   - `en/` (pasta inteira)
+   - `es/` (pasta inteira)
+5. **Arraste** tudo para a área de upload do GitHub (ou use Ctrl+A para selecionar todos e depois clique em Abrir)
+6. Em **Commit changes**, escreva:
+   ```
+   Versão 2.0 - Dados embutidos, PNE 2026, páginas de etapa, ficha diagnóstico completa
+   ```
+7. Clique em **Commit changes**
+
+> ⚠️ **Importante**: Se o GitHub limitar a 100 arquivos por upload, faça em dois lotes: primeiro envie a pasta `pt/assets/`, depois o restante.
+
+### Passo 3: Verificar se o GitHub Pages está ativo
+
+1. No repositório, clique na aba **Settings** (canto superior direito)
+2. No menu lateral esquerdo, clique em **Pages**
+3. Verifique se está configurado como:
+   - **Source**: Deploy from a branch
+   - **Branch**: `main` e pasta `/ (root)`
+4. Se estiver diferente, corrija e clique em **Save**
+5. Aguarde **1–2 minutos** para o GitHub reconstruir o site
+
+### Passo 4: Acessar o site atualizado
+
+- O endereço continua o mesmo: `https://prezadoafonso-gif.github.io/saeb360-rn/`
+- Acesse e teste a busca por escola, os gráficos, o mapa e os links das etapas
+- **Custo total: R$ 0,00** ✅
+
+---
+
+## 📋 O que mudou na Versão 2.0
+
+| Problema reportado | Solução implementada |
+|---|---|
+| Gráficos não carregavam | Dados embutidos em `dados.js` — elimina falhas de fetch/CORS |
+| Mapa mostrava "em desenvolvimento" | Mapa funcional com dados reais dos 167 municípios do RN |
+| Links dos cards não funcionavam | Criadas páginas reais para cada etapa (2ºEF, 5ºEF, 9ºEF, 3ºEM) |
+| Ficha de diagnóstico incompleta | Implementada ficha completa com proposições de intervenção automáticas |
+| DREs apareciam como 7 | Corrigido para 16 Diretorias Regionais de Educação |
+| Créditos davam impressão institucional | Atualizados para refletir natureza particular e independente |
+| PNE antigo (2014) | Alinhado com novo PNE 2026 (Lei 15.388/2026) |
+
+---
+
 ## 🔄 Como atualizar o site no futuro
 
 Sempre que quiser atualizar dados ou conteúdo:
@@ -167,9 +240,9 @@ O design utiliza as cores oficiais do estado do Rio Grande do Norte:
 
 ---
 
-## 🔒 Segurança e Privacidade
+## 🔒 Segurança, Privacidade e Base Legal
 
-- Todos os dados são **públicos** e agregados, conforme a Lei de Acesso à Informação (LAI - Lei 12.527/2011)
+- Todos os dados são **públicos** e agregados, conforme a **Lei de Acesso à Informação (LAI - Lei 12.527/2011)** e a **Lei 15.388/2026 (Art. 11, §2º)**, que determina a divulgação de dados e microdados agregados e desagregados pelo INEP, observada a **Lei Geral de Proteção de Dados (LGPD - Lei 13.709/2018)**
 - Não há exposição de dados individuais de estudantes, professores ou gestores
 - Não há coleta de cookies nem rastreamento de usuários
 - O site é 100% estático: nenhum dado pessoal é processado em servidor
@@ -187,9 +260,13 @@ O design utiliza as cores oficiais do estado do Rio Grande do Norte:
 
 ---
 
-## 👤 Responsável
+## 👤 Responsável e Natureza do Projeto
 
-Projeto desenvolvido por **Afonso Gomes Ferreira Filho** (SUAVE/SEEC/RN), com apoio de dados da Secretaria de Estado da Educação e da Cultura do Rio Grande do Norte (SEEC-RN) e do Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP).
+**Saeb360 RN** é um projeto de iniciativa particular, desenvolvido de forma independente por **Afonso Gomes Ferreira Filho**, sem vínculo institucional formal com o INEP, a SEEC-RN ou qualquer órgão público.
+
+O projeto é oferecido gratuitamente em sua fase inicial, sem fins lucrativos, com o propósito de democratizar o acesso a informações educacionais públicas. A depender das condições legais e da viabilidade técnica, poderá ser monetizado futuramente (por exemplo, por meio de publicidade, serviços premium ou parcerias institucionais), sempre respeitando a legislação vigente, a Lei Geral de Proteção de Dados (LGPD - Lei 13.709/2018) e os direitos autorais das fontes de dados.
+
+As análises, proposições, interpretações e notícias geradas são de responsabilidade exclusiva do mantenedor do projeto. Os dados oficiais devem ser sempre consultados nos portais do INEP para fins decisórios formais.
 
 ---
 
