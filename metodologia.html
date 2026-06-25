@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metodologia - Saeb360 RN</title>
+<meta name="description" content="Metodologia, fontes de dados e referências bibliográficas do Saeb360 RN.">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="header-top">
+    <div class="logo">
+      <div class="logo-icon">360</div>
+      <div>
+        <div>Saeb360 <span style="opacity:0.8;font-weight:400;">RN</span></div>
+        <div class="logo-sub">Metodologia e Fontes</div>
+      </div>
+    </div>
+    <div class="lang-switch">
+      <a href="../index.html" class="lang-btn active">PT</a>
+      <a href="../../en/index.html" class="lang-btn">EN</a>
+      <a href="../../es/index.html" class="lang-btn">ES</a>
+    </div>
+    <button class="mobile-menu-toggle" onclick="history.back()">←</button>
+  </div>
+</header>
+
+<section class="section" style="background:var(--branco);padding-top:40px;">
+  <div class="container">
+    <h1 style="font-size:2rem;color:var(--azul-rn);margin-bottom:8px;">Metodologia e Fontes</h1>
+    <p style="color:var(--cinza-texto);margin-bottom:32px;">Transparência total sobre como os dados são coletados, processados e apresentados.</p>
+
+    <div class="card" style="margin-bottom:24px;">
+      <div class="card-body">
+        <h2 style="color:var(--azul-rn);margin-bottom:12px;">📊 Fontes Primárias de Dados</h2>
+        <p style="margin-bottom:12px;">Todos os dados utilizados neste site são de origem pública, disponibilizados nos seguintes portais:</p>
+        <ul style="padding-left:20px;color:var(--cinza-texto);">
+          <li><strong>INEP</strong> - Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira: <a href="https://www.gov.br/inep/pt-br" target="_blank">www.gov.br/inep</a></li>
+          <li><strong>SAEB</strong> - Sistema de Avaliação da Educação Básica: resultados, microdados e matrizes de referência</li>
+          <li><strong>IDEB</strong> - Índice de Desenvolvimento da Educação Básica: resultados por escola, município e estado</li>
+          <li><strong>Avaliação da Alfabetização</strong> - 2º ano do Ensino Fundamental (a partir de 2023) e ICA</li>
+          <li><strong>SIMAIS</strong> - Sistema de Avaliação do RN (SEEC/RN): dados complementares estaduais</li>
+          <li><strong>IDERN</strong> - Índice de Desenvolvimento da Educação do RN (SEEC/RN)</li>
+          <li><strong>Qedu</strong> - <a href="https://qedu.org.br/uf/24-rio-grande-do-norte" target="_blank">qedu.org.br/uf/24-rio-grande-do-norte</a></li>
+          <li><strong>Todos pela Educação</strong> - Panorama da Educação do Rio Grande do Norte</li>
+          <li><strong>IBGE</strong> - GeoJSON dos municípios do RN</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:24px;">
+      <div class="card-body">
+        <h2 style="color:var(--azul-rn);margin-bottom:12px;">🧮 Metodologia de Cálculo</h2>
+        <h3 style="margin-top:16px;margin-bottom:8px;">IDEB</h3>
+        <p>O IDEB é calculado conforme a metodologia oficial do INEP (N.O. 1/2007):</p>
+        <p style="background:var(--cinza-claro);padding:12px 16px;border-radius:8px;font-family:monospace;margin:8px 0;">
+          IDEB = N × P<br>
+          N = (N_LP + N_MT) / 2<br>
+          N_disciplina = (proficiência - limite inferior) / (limite superior - limite inferior) × 10
+        </p>
+        <p>Os limites de padronização do N são definidos pelo INEP para cada etapa e disciplina.</p>
+
+        <h3 style="margin-top:16px;margin-bottom:8px;">Padrões de Desempenho</h3>
+        <p>A distribuição dos níveis N0-N10 do SAEB é mapeada para os padrões de desempenho do INEP:</p>
+        <table class="data-table" style="margin-top:12px;">
+          <thead>
+            <tr><th>Etapa</th><th>Disciplina</th><th>Abaixo do Básico</th><th>Básico</th><th>Adequado</th><th>Avançado</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>5º EF</td><td>LP</td><td>N0-N2</td><td>N3-N4</td><td>N5-N6</td><td>N7-N9</td></tr>
+            <tr><td>5º EF</td><td>MT</td><td>N0-N3</td><td>N4-N5</td><td>N6-N7</td><td>N8-N10</td></tr>
+            <tr><td>9º EF</td><td>LP</td><td>N0-N1</td><td>N2-N3</td><td>N4-N5</td><td>N6-N8</td></tr>
+            <tr><td>9º EF</td><td>MT</td><td>N0-N1</td><td>N2-N4</td><td>N5-N6</td><td>N7-N9</td></tr>
+            <tr><td>3º EM</td><td>LP</td><td>N0-N1</td><td>N2-N3</td><td>N4-N5</td><td>N6-N8</td></tr>
+            <tr><td>3º EM</td><td>MT</td><td>N0-N1</td><td>N2-N3</td><td>N4-N5</td><td>N6-N9</td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="margin-top:16px;margin-bottom:8px;">Estimativa IDEB 2025</h3>
+        <p>O IDEB 2025 apresentado é <strong>estimado</strong>, calculado a partir de:</p>
+        <ul style="padding-left:20px;color:var(--cinza-texto);">
+          <li>Resultados preliminares do SAEB 2025 (proficiência por escola)</li>
+          <li>Taxas de aprovação da rede estadual (Sigeduc/SEEC-RN, 2025)</li>
+          <li>Metodologia combinada de projeção INEP + diferencial histórico SIMAIS</li>
+        </ul>
+        <div class="alert alert-warning" style="margin-top:12px;">
+          <strong>Atenção:</strong> O IDEB oficial 2025 será divulgado pelo INEP em 08/06/2026. Os valores apresentados são estimativas preliminares baseadas em projeção estatística e devem ser interpretados como aproximações para acompanhamento. Os dados oficiais devem ser sempre consultados nos portais do INEP para fins decisórios formais.
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:24px;">
+      <div class="card-body">
+        <h2 style="color:var(--azul-rn);margin-bottom:12px;">📚 Referências Bibliográficas (ABNT)</h2>
+        <p style="font-size:0.85rem;color:var(--cinza-texto);line-height:1.8;">
+          BRASIL. Presidência da República. Casa Civil. <strong>Lei nº 15.388, de 14 de abril de 2026</strong>. Aprova o Plano Nacional de Educação (PNE). Brasília, DF: Presidência da República, 2026. Disponível em: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15388.htm. Acesso em: 24 jun. 2025.<br><br>
+
+          BRASIL. Ministério da Educação. Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP). <strong>Sistema de Avaliação da Educação Básica (SAEB)</strong>. Brasília, DF: INEP, 1990-. Disponível em: https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacoes-e-exames-educacionais/saeb. Acesso em: 24 jun. 2025.<br><br>
+
+          BRASIL. Ministério da Educação. INEP. <strong>Índice de Desenvolvimento da Educação Básica (IDEB)</strong>. Brasília, DF: INEP, 2007-. Disponível em: https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb. Acesso em: 24 jun. 2025.<br><br>
+
+          BRASIL. Ministério da Educação. <strong>Base Nacional Comum Curricular (BNCC)</strong>. Brasília, DF: MEC, 2018. Disponível em: http://basenacionalcomum.mec.gov.br/. Acesso em: 24 jun. 2025.<br><br>
+
+          BRASIL. Lei nº 13.005, de 25 de junho de 2014. <strong>Plano Nacional de Educação (PNE 2014-2024)</strong>. Brasília, DF: Presidência da República, 2014.<br><br>
+
+          BRASIL. Lei nº 12.527, de 18 de novembro de 2011. <strong>Lei de Acesso à Informação (LAI)</strong>. Brasília, DF: Presidência da República, 2011.<br><br>
+
+          BRASIL. Lei nº 13.709, de 14 de agosto de 2018. <strong>Lei Geral de Proteção de Dados Pessoais (LGPD)</strong>. Brasília, DF: Presidência da República, 2018.<br><br>
+
+          QEdu. <strong>Dados Educacionais de Rio Grande do Norte</strong>. São Paulo: QEdu, 2025. Disponível em: https://qedu.org.br/uf/24-rio-grande-do-norte. Acesso em: 24 jun. 2025.<br><br>
+
+          TODOS PELA EDUCAÇÃO. <strong>Panorama da Educação do Rio Grande do Norte</strong>. São Paulo: Todos Pela Educação, 2023. Disponível em: https://todospelaeducacao.org.br. Acesso em: 24 jun. 2025.
+        </p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:24px;">
+      <div class="card-body">
+        <h2 style="color:var(--azul-rn);margin-bottom:12px;">🔒 Segurança, Privacidade e Aviso Legal</h2>
+        <p>Todos os dados apresentados são de <strong>domínio público</strong>, disponibilizados pelo INEP nos termos da <strong>Lei de Acesso à Informação (LAI - Lei 12.527/2011)</strong> e da <strong>Lei 15.388/2026 (Art. 11, §2º)</strong>, que determina a divulgação de dados e microdados agregados e desagregados pelo INEP, observada a <strong>Lei Geral de Proteção de Dados (LGPD - Lei 13.709/2018)</strong>.</p>
+        <p style="margin-top:8px;">Não são expostos dados individuais de estudantes, professores ou gestores. As informações por escola são públicas conforme determinação legal do Censo Escolar e do INEP.</p>
+        <p style="margin-top:8px;"><strong>Isenção de responsabilidade:</strong> O <strong>Saeb360 RN</strong> é um projeto de iniciativa particular, sem vínculo institucional formal com o INEP, a SEEC-RN ou qualquer órgão público. As análises, proposições, interpretações e notícias geradas são de responsabilidade exclusiva do mantenedor do projeto. Os dados oficiais devem ser sempre consultados nos portais do INEP para fins decisórios formais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-bottom" style="border-top:none;padding-top:0;">
+    Saeb360 RN - Todos os dados são públicos conforme LAI. Fontes: INEP, SEEC-RN, IBGE, Qedu, Todos pela Educação.
+  </div>
+</footer>
+
+</body>
+</html>
