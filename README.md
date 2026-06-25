@@ -1,4 +1,4 @@
-# Saeb360 RN - Sistema de Avaliação da Educação Básica do Rio Grande do Norte
+# Saeb360 RN - Avaliação Educacional do Rio Grande do Norte
 
 ## 🌐 Visão Geral
 
