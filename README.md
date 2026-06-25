@@ -262,7 +262,7 @@ O design utiliza as cores oficiais do estado do Rio Grande do Norte:
 
 ## 👤 Responsável e Natureza do Projeto
 
-**Saeb360 RN** é um projeto de iniciativa particular, desenvolvido de forma independente por **Afonso Gomes Ferreira Filho**, sem vínculo institucional formal com o INEP, a SEEC-RN ou qualquer órgão público.
+**Saeb360 RN** é um projeto de iniciativa particular, desenvolvido de forma independente por **Afonso Gomes**, sem vínculo institucional formal com o INEP, a SEEC-RN ou qualquer órgão público.
 
 O projeto é oferecido gratuitamente em sua fase inicial, sem fins lucrativos, com o propósito de democratizar o acesso a informações educacionais públicas. A depender das condições legais e da viabilidade técnica, poderá ser monetizado futuramente (por exemplo, por meio de publicidade, serviços premium ou parcerias institucionais), sempre respeitando a legislação vigente, a Lei Geral de Proteção de Dados (LGPD - Lei 13.709/2018) e os direitos autorais das fontes de dados.
 
