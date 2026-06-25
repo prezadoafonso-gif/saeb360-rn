@@ -1,8 +1,8 @@
-# Saeb360 RN - Sistema de Avaliação da Educação Básica do Rio Grande do Norte
+# Saeb360 RN - Panorama da Educação Básica do Rio Grande do Norte
 
 ## 🌐 Visão Geral
 
-**Saeb360 RN** é um painel digital completo, gratuito e interativo, dedicado ao acompanhamento dos resultados do **SAEB** (Sistema de Avaliação da Educação Básica), **IDEB** (Índice de Desenvolvimento da Educação Básica), **ICA** (Indicador Criança Alfabetizada) e **SIMAIS** (Sistema de Avaliação do RN) para todas as escolas, redes e municípios do estado do **Rio Grande do Norte**, Brasil.
+**Saeb360 RN** é um painel digital completo, gratuito e interativo, dedicado ao acompanhamento dos resultados do **SAEB** (Sistema de Avaliação da Educação Básica), **IDEB** (Índice de Desenvolvimento da Educação Básica), **ICA** (Indicador Criança Alfabetizada) e **SIMAIS** (Sistema de Avaliação do RN) para todas as escolas estaduais e municipais, redes públicas de ensino e municípios do estado do **Rio Grande do Norte**, Brasil.
 
 O site oferece:
 - 📊 **Dashboards interativos** com gráficos de evolução histórica (2017–2025)
