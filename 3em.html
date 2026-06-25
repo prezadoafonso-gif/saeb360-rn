@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3ª Série EM - Ensino Médio | Saeb360 RN</title>
+<meta name="description" content="Resultados do SAEB e IDEB da 3ª série do Ensino Médio no Rio Grande do Norte - evolução, desafios, padrões de desempenho e proposições de intervenção.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-top">
+    <div class="logo">
+      <div class="logo-icon">360</div>
+      <div>
+        <div>Saeb360 <span style="opacity:0.8;font-weight:400;">RN</span></div>
+        <div class="logo-sub">Ensino Médio - 3ª Série EM</div>
+      </div>
+    </div>
+    <div class="lang-switch">
+      <a href="../index.html" class="lang-btn active">PT</a>
+    </div>
+    <button class="mobile-menu-toggle" onclick="history.back()">← Voltar</button>
+  </div>
+  <nav class="nav-main">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-link">Início</a>
+      <a href="2ef.html" class="nav-link">2º EF</a>
+      <a href="5ef.html" class="nav-link">5º EF</a>
+      <a href="9ef.html" class="nav-link">9º EF</a>
+      <a href="equidade.html" class="nav-link">Equidade</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" style="padding:40px 24px 60px;">
+  <div class="hero-container">
+    <h1>Ensino Médio <span class="highlight">3ª Série EM</span></h1>
+    <p class="hero-subtitle">IDEB, proficiência em Língua Portuguesa e Matemática, desafios do ensino médio e proposições de intervenção para o RN.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--branco);">
+  <div class="container">
+    <h2 class="section-title"><span class="icon">📈</span> Evolução do IDEB - 3ª Série EM</h2>
+    <p class="section-subtitle">Índice de Desenvolvimento da Educação Básica - Rede Pública do RN</p>
+    <div class="chart-container">
+      <canvas id="chart-ideb-3em" height="120"></canvas>
+    </div>
+
+    <h2 class="section-title" style="margin-top:32px;"><span class="icon">📊</span> Proficiência Média - 3ª Série EM</h2>
+    <p class="section-subtitle">Escala SAEB (pontos) - Língua Portuguesa e Matemática</p>
+    <div class="chart-container">
+      <canvas id="chart-prof-3em" height="120"></canvas>
+    </div>
+
+    <div class="alert alert-warning" style="margin-top:24px;">
+      <strong>Alerta:</strong> A proficiência média em Matemática do 3º EM está estagnada desde 2023 (257,3 → 257,4 pts). Embora a taxa de aprovação tenha crescido, os ganhos de fluxo escolar não se traduziram em aprendizagem efetiva em Matemática. Este é o gargalo mais crítico da educação média no RN.
+    </div>
+
+    <h2 class="section-title" style="margin-top:32px;"><span class="icon">🎯</span> Padrões de Desempenho - 3ª Série EM (2025)</h2>
+    <div class="card-grid" style="margin-bottom:32px;">
+      <div class="card">
+        <div class="card-body" style="text-align:center;">
+          <div class="card-metric-value" style="color:#cc3300;font-size:2.2rem;">39,3%</div>
+          <div class="card-metric-label">Abaixo do Básico (LP)</div>
+          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Redução de 4,8 pp desde 2017</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" style="text-align:center;">
+          <div class="card-metric-value" style="color:#ffcc00;font-size:2.2rem;">34,8%</div>
+          <div class="card-metric-label">Básico (LP)</div>
+          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Base de transição</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" style="text-align:center;">
+          <div class="card-metric-value" style="color:var(--verde-rn);font-size:2.2rem;">22,3%</div>
+          <div class="card-metric-label">Adequado (LP)</div>
+          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Aprendizagem esperada</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" style="text-align:center;">
+          <div class="card-metric-value" style="color:var(--azul-rn);font-size:2.2rem;">3,7%</div>
+          <div class="card-metric-label">Avançado (LP)</div>
+          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Supera expectativas</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-grid" style="margin-bottom:32px;">
+      <div class="card">
+        <div class="card-body" style="text-align:center;">
+          <div class="card-metric-value" style="color:#cc3300;font-size:2.2rem;">46,4%</div>
+          <div class="card-metric-label">Abaixo do Básico (MT)</div>
+          <p style="font-size:0.8rem;color:#666;margin-top:8px;">MAIOR DESAFIO do EM</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" style="text-align:center;">
+          <div class="card-metric-value" style="color:#ffcc00;font-size:2.2rem;">39,6%</div>
+          <div class="card-metric-label">Básico (MT)</div>
+          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Base de transição</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" style="text-align:center;">
+          <div class="card-metric-value" style="color:var(--verde-rn);font-size:2.2rem;">11,3%</div>
+          <div class="card-metric-label">Adequado (MT)</div>
+          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Aprendizagem esperada</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" style="text-align:center;">
+          <div class="card-metric-value" style="color:var(--azul-rn);font-size:2.2rem;">2,6%</div>
+          <div class="card-metric-label">Avançado (MT)</div>
+          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Supera expectativas</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top:32px;"><span class="icon">⚖️</span> Equidade no 3º EM</h2>
+    <div class="chart-container">
+      <canvas id="chart-equidade-3em" height="120"></canvas>
+    </div>
+
+    <h2 class="section-title" style="margin-top:32px;"><span class="icon">📚</span> Habilidades Estruturantes da Matriz SAEB</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-body">
+          <h4 style="color:var(--azul-rn);">LP - D1 (Leitura)</h4>
+          <p style="font-size:0.85rem;color:#555;">Compreender textos complexos de diferentes gêneros e áreas do conhecimento. Relacionar informações para construir sentido global. BNCC: EM13LP01, EM13LP02.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h4 style="color:var(--azul-rn);">LP - D2 (Escrita)</h4>
+          <p style="font-size:0.85rem;color:#555;">Produzir textos argumentativos, expositivos e narrativos com coesão, coerência e adequação. BNCC: EM13LP10, EM13LP11.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h4 style="color:var(--azul-rn);">MT - D1 (Números e Funções)</h4>
+          <p style="font-size:0.85rem;color:#555;">Resolver problemas com funções, progressões, logaritmos e matrizes. Aplicar em contextos científicos e cotidianos. BNCC: EM13MA01, EM13MA02.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h4 style="color:var(--azul-rn);">MT - D2 (Geometria e Estatística)</h4>
+          <p style="font-size:0.85rem;color:#555;">Analisar dados estatísticos, compreender probabilidade e aplicar geometria analítica. BNCC: EM13MA15, EM13MA16.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top:32px;"><span class="icon">💡</span> Proposições de Intervenção</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-body">
+          <h4 style="color:var(--azul-rn);">🔢 Matemática de Recuperação</h4>
+          <p style="font-size:0.85rem;color:#555;">Estabelecer componente de "matemática de recuperação" no 1º EM para alunos com proficiência <250 no 9º EF. Foco em operações, frações e equações.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h4 style="color:var(--azul-rn);">🔗 Currículo Integrado</h4>
+          <p style="font-size:0.85rem;color:#555;">Integrar Matemática a componentes de vida e saúde (água, energia, finanças pessoais, orçamento familiar). Conectar à EPT e ao mundo do trabalho.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h4 style="color:var(--azul-rn);">🖥️ Plataformas Adaptativas</h4>
+          <p style="font-size:0.85rem;color:#555;">Utilizar Khan Academy, Brasil Mais Escola e outras plataformas no contraturno, com acompanhamento pedagógico. Rota de aprendizagem personalizada.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h4 style="color:var(--azul-rn);">📖 Leitura e Produção Textual</h4>
+          <p style="font-size:0.85rem;color:#555;">Projeto de leitura de textos científicos e jornalísticos com produção de resenhas, artigos e podcasts. Conectar às competências do Enem.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-bottom">Saeb360 RN - Dados públicos conforme LAI. Fontes: INEP, SEEC-RN, Qedu.</div>
+</footer>
+
+<script src="../assets/js/dados.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof Chart === 'undefined') return;
+  const d = DADOS;
+
+  const ctx1 = document.getElementById('chart-ideb-3em');
+  if (ctx1) {
+    new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: d.panorama.ideb_historico.ensino_medio.map(x=>x.ano),
+        datasets: [
+          { label: 'IDEB 3º EM (RN)', data: d.panorama.ideb_historico.ensino_medio.map(x=>x.ideb), borderColor: '#003366', backgroundColor: 'rgba(0,51,102,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
+          { label: 'Meta', data: d.panorama.ideb_historico.ensino_medio.map(x=>x.meta), borderColor: '#ffcc00', backgroundColor: 'transparent', borderDash: [5,5], tension: 0.3, pointRadius: 3 }
+        ]
+      },
+      options: { responsive: true, plugins: { legend: { position: 'top' } }, scales: { y: { beginAtZero: false, min: 2, max: 5 } } }
+    });
+  }
+
+  const ctx2 = document.getElementById('chart-prof-3em');
+  if (ctx2) {
+    const lp = d.panorama.proficiencia['3EM'].LP;
+    const mt = d.panorama.proficiencia['3EM'].MT;
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: lp.map(x=>x.ano),
+        datasets: [
+          { label: 'Língua Portuguesa', data: lp.map(x=>x.pts), backgroundColor: '#003366', borderRadius: 6 },
+          { label: 'Matemática', data: mt.map(x=>x.pts), backgroundColor: '#009639', borderRadius: 6 }
+        ]
+      },
+      options: { responsive: true, plugins: { legend: { position: 'top' } }, scales: { y: { beginAtZero: false, min: 230, max: 280 } } }
+    });
+  }
+
+  const ctx3 = document.getElementById('chart-equidade-3em');
+  if (ctx3) {
+    const g = d.equidade.gaps['3EM'];
+    new Chart(ctx3, {
+      type: 'bar',
+      data: {
+        labels: ['Gap Racial (LP)', 'Gap Racial (MT)', 'Gap Gênero (LP)', 'Gap Gênero (MT)'],
+        datasets: [{ label: '3º EM', data: [g.racial_LP, g.racial_MT, g.genero_LP, g.genero_MT], backgroundColor: ['#003366','#004d99','#009639','#66cc99'], borderRadius: 6 }]
+      },
+      options: { responsive: true, indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
+    });
+  }
+});
+</script>
+</body>
+
+<footer class="footer">
+  <div class="footer-bottom" style="border-top:none;padding-top:20px;">
+    Projeto particular e independente, sem vínculo institucional formal com o INEP ou a SEEC-RN. Todos os dados são públicos, conforme LAI e Lei 15.388/2026 (Art. 11, §2º), observada a LGPD. Fontes: INEP, IBGE, Qedu, Todos pela Educação.
+  </div>
+</footer>
+</html>
