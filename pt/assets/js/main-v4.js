@@ -254,7 +254,7 @@
     container.innerHTML = '';
 
     destaques.forEach(function(dest, i) {
-      var etapaNome = dest.etapa === '5EF' ? '5º Ano' : dest.etapa === '9EF' ? '9º Ano' : '3º EM';
+      var etapaNome = dest.etapa === '5EF' ? '5º Ano' : dest.etapa === '9EF' ? '9º Ano' : '3ª EM';
       var card = document.createElement('div');
       card.className = 'destaque-card';
       card.innerHTML = 
@@ -278,7 +278,7 @@
       {cod:'2EF',nome:'2º Ano',sub:'Alfabetização',icon:'🎒',desc:'Avaliação de alfabetização. ICA: percentual de estudantes no Adequado ou Avançado (mínimo 743 pts SAEB ou 601 pts SIMAIS Alfa). Indicador crítico para alfabetização na idade certa.',cor:'#003366'},
       {cod:'5EF',nome:'5º Ano',sub:'Anos Iniciais',icon:'📚',desc:'Avaliação do final dos Anos Iniciais. IDEB principal. Padrões de desempenho: Abaixo do Básico, Básico, Adequado, Avançado. Meta do PNE 2026.',cor:'#003366'},
       {cod:'9EF',nome:'9º Ano',sub:'Anos Finais',icon:'🔬',desc:'Avaliação do final do Ensino Fundamental. Transição para o Ensino Médio. Habilidades de leitura crítica e resolução de problemas complexos.',cor:'#ffcc00'},
-      {cod:'3EM',nome:'3º EM',sub:'Ensino Médio',icon:'🎓',desc:'Avaliação do final do Ensino Médio. Preparação para ENEM, ensino superior e mercado de trabalho. Matemática contextualizada e leitura avançada.',cor:'#009639'}
+      {cod:'3EM',nome:'3ª EM',sub:'Ensino Médio',icon:'🎓',desc:'Avaliação do final do Ensino Médio. Preparação para ENEM, ensino superior e mercado de trabalho. Matemática contextualizada e leitura avançada.',cor:'#009639'}
     ];
 
     container.innerHTML = '';
@@ -655,7 +655,7 @@
     var html = '<div class="equidade-grid">';
     ['5EF','9EF','3EM'].forEach(function(e) {
       var g = gaps[e] || {};
-      var nome = e === '5EF' ? '5º Ano' : e === '9EF' ? '9º Ano' : '3º EM';
+      var nome = e === '5EF' ? '5º Ano' : e === '9EF' ? '9º Ano' : '3ª EM';
       html += '<div class="equidade-card">' +
         '<h4>' + nome + '</h4>' +
         '<div class="gap-row"><span>Gap Racial LP</span><strong>' + (g.rlp || '—') + ' pts</strong></div>' +

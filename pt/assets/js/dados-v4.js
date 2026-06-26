@@ -23,11 +23,12 @@ const DADOS_BASE = {
       metas: "As metas do IDEB foram estabelecidas até 2021 (1º ciclo do IDEB) e estendidas a 2023. Não houve metas definidas para 2025. O PNE 2026 (Lei 15.388/2026) estabelece novas metas para o período 2024-2026."
     },
     ica: {
-      titulo: "ICA — Índice de Alfabetização Compromissada",
-      definicao: "O ICA é o percentual de estudantes alocados nos padrões de desempenho 'Adequado' ou 'Avançado' no 2º ano do Ensino Fundamental. Representa as crianças que já demonstram domínio da leitura e escrita no ciclo de alfabetização.",
-      escala: "Para estar no 'Adequado' ou 'Avançado', o estudante precisa alcançar no mínimo 743 pontos na escala SAEB (equivalente a 601 pontos na escala SIMAIS Alfa, utilizada em alguns diagnósticos estaduais).",
-      utilidade: "O ICA é o indicador mais sensível de alfabetização na idade certa. Um ICA baixo indica que a escola/município não está conseguindo alfabetizar na faixa etária esperada (até o 3º ano).",
-      quem_usa: "Gestores dos Anos Iniciais, coordenadores pedagógicos, professores de 1º e 2º anos, e secretarias para direcionar programas de alfabetização."
+      titulo: "ICA — Indicador Criança Alfabetizada",
+      definicao: "O ICA é o percentual de estudantes do 2º ano do Ensino Fundamental que atingem o padrão nacional de alfabetização, estabelecido pela Pesquisa Alfabetiza Brasil do INEP. Uma criança é considerada alfabetizada quando alcança 743 pontos na escala do SAEB 2º ano, o que corresponde a 65% de probabilidade de ter desenvolvido as habilidades necessárias para leitura e escrita autônomas. O ICA é calculado a partir das avaliações censitárias dos sistemas estaduais de avaliação, organizadas em complementaridade ao SAEB.",
+      escala: "Ponto de corte: 743 pontos na escala SAEB do 2º ano. Esta marca corresponde ao nível 4 da escala de proficiência do Saeb 2º ano. Acima deste ponto, a criança é considerada leitora e escritora autônoma: lê palavras, frases e textos curtos; localiza informações explícitas em textos curtos (até 6 linhas); infere informações em textos com linguagem verbal e não verbal; escreve ortograficamente palavras com regularidades fonema-letra; e escreve textos que circulam na vida cotidiana, ainda que com desvios ortográficos.",
+      utilidade: "O ICA é o indicador mais sensível de alfabetização na idade certa. Um ICA baixo indica que a escola/município/estado não está conseguindo alfabetizar as crianças até o 2º ano do Ensino Fundamental, conforme determina a BNCC (Resolução CNE/CP nº 2/2017). É o indicador oficial do Compromisso Nacional Criança Alfabetizada até 2030 (Decreto nº 11.556/2023).",
+      quem_usa: "Gestores dos Anos Iniciais, coordenadores pedagógicos, professores de 1º e 2º anos, secretarias estaduais e municipais de educação, conselhos de educação e sociedade civil para monitorar a alfabetização na idade certa.",
+      metas: "Compromisso Nacional: 80% das crianças alfabetizadas até 2030. As metas são progressivas: Brasil — 2025: 64%, 2026: 67%, 2027: 71%, 2028: 74%, 2029: 77%, 2030: >80%. RN — 2025: 51%, 2026: 57%, 2027: 64%, 2028: 70%, 2029: 75%, 2030: >80%."
     },
     proficiencia: {
       titulo: "Proficiência — Escala SAEB",
@@ -38,7 +39,7 @@ const DADOS_BASE = {
     padroes: {
       titulo: "Padrões de Desempenho do SAEB",
       definicao: "O SAEB classifica os estudantes em quatro padrões de desempenho: Abaixo do Básico, Básico, Adequado e Avançado. Cada padrão corresponde a um conjunto de habilidades que o estudante domina.",
-      abaixo: "Abaixo do Básico: o estudante não domina as habilidades esperadas para a etapa. No 5º ano, não lê textos simples com compreensão. No 9º ano, não interpreta textos de maior complexidade. No 3º EM, não resolve problemas com equações do 1º grau.",
+      abaixo: "Abaixo do Básico: o estudante não domina as habilidades esperadas para a etapa. No 5º ano, não lê textos simples com compreensão. No 9º ano, não interpreta textos de maior complexidade. No 3ª EM, não resolve problemas com equações do 1º grau.",
       basico: "Básico: o estudante domina habilidades elementares da etapa. Lê e compreende textos simples, realiza operações aritméticas fundamentais, mas enfrenta desafios em tarefas mais complexas.",
       adequado: "Adequado: o estudante domina as habilidades esperadas para a etapa. Compreende textos variados, resolve problemas com múltiplas etapas, faz inferências e argumenta com base em dados.",
       avancado: "Avançado: o estudante domina habilidades além do esperado para a etapa. Analisa criticamente textos complexos, resolve problemas não rotineiros, generaliza padrões e faz abstrações matemáticas."
@@ -95,20 +96,26 @@ const DADOS_BASE = {
         LP:[{a:2017,p:230.0},{a:2019,p:233.0},{a:2021,p:235.0},{a:2023,p:238.6},{a:2025,p:246.2,e:true,obs:"Estimativa"}],
         MT:[{a:2017,p:232.0},{a:2019,p:235.0},{a:2021,p:236.0},{a:2023,p:238.6},{a:2025,p:241.9,e:true,obs:"Estimativa"}]
       },
-      "3EM":{
+      "3ª EM":{
         LP:[{a:2017,p:245.0},{a:2019,p:248.0},{a:2021,p:250.0},{a:2023,p:254.3},{a:2025,p:264.6,e:true,obs:"Estimativa"}],
         MT:[{a:2017,p:248.0},{a:2019,p:251.0},{a:2021,p:253.0},{a:2023,p:257.3},{a:2025,p:257.4,e:true,obs:"Estimativa"}]
       }
     },
-    // ICA: % Adequado + Avançado, escala mínima 743 SAEB / 601 SIMAIS Alfa
+    // ICA: dados reais do INEP 2023-2025 para o RN (rede pública)
+    // Fonte: INEP 2025 ICA Result e Metas UFs.xlsx
     ica: {
       "2EF": [
-        {ano:2017,pct:42.3,obs:""},
-        {ano:2019,pct:45.1,obs:""},
-        {ano:2021,pct:48.6,obs:""},
-        {ano:2023,pct:51.2,obs:""},
-        {ano:2025,pct:55.8,obs:"Estimativa"}
-      ]
+        {ano:2023,pct:37,obs:"Dados oficiais INEP/SAEB — sistema estadual de avaliação"},
+        {ano:2024,pct:39,obs:"Dados oficiais INEP/SAEB — sistema estadual de avaliação"},
+        {ano:2025,pct:48,obs:"Dados oficiais INEP/SAEB — sistema estadual de avaliação"}
+      ],
+      metas_rn: [
+        {ano:2024,meta:44},{ano:2025,meta:51},{ano:2026,meta:57},
+        {ano:2027,meta:64},{ano:2028,meta:70},{ano:2029,meta:75},{ano:2030,meta:">80"}
+      ],
+      participacao: 85,
+      nivel: 4,
+      nota: "O ICA é calculado pelo INEP/MEC a partir das avaliações censitárias dos sistemas estaduais de avaliação, organizadas em complementaridade ao SAEB. Ponto de corte: 743 pontos na escala SAEB do 2º ano. A BNCC (Resolução CNE/CP nº 2/2017) determina que a criança deve estar alfabetizada ao término do 2º ano do EF."
     }
   },
 
@@ -172,7 +179,7 @@ const DADOS_BASE = {
     {id:1,slug:"reducao-abaixo-basico-5ano",data:"2025-06-26",titulo:"RN avança na redução do 'Abaixo do Básico' no 5º ano: queda de 8,6 pp desde 2017",cat:"equidade",tags:["abaixo do básico","5º ano","evolução","equidade"],resumo:"A rede pública do RN registrou 29,9% de estudantes no padrão 'Abaixo do Básico' em LP no 5º ano em 2025, contra 38,5% em 2017. O avanço reflete esforços de alfabetização e reforço pedagógico, mas desafios persistem em Matemática (43,3% no AB)."},
     {id:2,slug:"crescimento-ideb-anos-finais",data:"2025-06-26",titulo:"IDEB estimado do RN cresce 0,7 ponto em Anos Finais entre 2023 e 2025, maior alta da série",cat:"resultados",tags:["ideb","9º ano","crescimento","pós-pandemia"],resumo:"O IDEB estimado da rede estadual no 9º ano saltou de 3,7 (2023) para 4,1 (2025), impulsionado pela melhora de proficiência (+7,6 pts em LP) e pelo incremento da taxa de aprovação (80%→92%). A recuperação pós-pandemia mostra sinais consistentes."},
     {id:3,slug:"gap-racial-9ano-lp",data:"2025-06-26",titulo:"Gap racial de 13 pontos no 9º ano de LP alerta para desigualdade educacional no RN",cat:"equidade",tags:["gap racial","9º ano","desigualdade","SIMAIS"],resumo:"Dados do SIMAIS Contextual 2025 revelam que estudantes PPI do 9º ano têm proficiência média de 226,8 pts em LP, contra 239,7 de brancos/amarelos. A diferença de 13 pts é a maior da série SIMAIS e demanda políticas afirmativas pedagógicas."},
-    {id:4,slug:"matematica-3em-gargalo",data:"2025-06-26",titulo:"Matemática do 3º EM: 46,4% no 'Abaixo do Básico' é o maior desafio da educação média no RN",cat:"desafio",tags:["ensino médio","matemática","abaixo do básico","desafio"],resumo:"O Ensino Médio matricial do RN mantém gargalo histórico em Matemática, com quase metade dos estudantes no padrão mais baixo. A proficiência média de 257,4 pts está estagnada desde 2023, indicando que ganhos de fluxo escolar não se traduziram em aprendizagem efetiva."}
+    {id:4,slug:"matematica-3em-gargalo",data:"2025-06-26",titulo:"Matemática do 3ª EM: 46,4% no 'Abaixo do Básico' é o maior desafio da educação média no RN",cat:"desafio",tags:["ensino médio","matemática","abaixo do básico","desafio"],resumo:"O Ensino Médio matricial do RN mantém gargalo histórico em Matemática, com quase metade dos estudantes no padrão mais baixo. A proficiência média de 257,4 pts está estagnada desde 2023, indicando que ganhos de fluxo escolar não se traduziram em aprendizagem efetiva."}
   ],
 
   destaques: [
@@ -202,7 +209,7 @@ const DADOS_BASE = {
       escola:"EMEF Professor Antônio Pinto (Parnamirim)",
       direc:"DIREC Natal (região metropolitana)",
       rede:"MUNICIPAL",
-      desc:"A Escola Municipal de Ensino Fundamental Professor Antônio Pinto, em Parnamirim, aumentou o percentual de estudantes no padrão 'Adequado' em Língua Portuguesa do 3º EM de 18% (2023) para 26% (2025), enquanto reduziu o 'Abaixo do Básico' de 48% para 35%. A escola implementou leitura orientada de textos jornalísticos e literários com análise textual semanal, produção de resenhas e debates em sala.",
+      desc:"A Escola Municipal de Ensino Fundamental Professor Antônio Pinto, em Parnamirim, aumentou o percentual de estudantes no padrão 'Adequado' em Língua Portuguesa do 3ª EM de 18% (2023) para 26% (2025), enquanto reduziu o 'Abaixo do Básico' de 48% para 35%. A escola implementou leitura orientada de textos jornalísticos e literários com análise textual semanal, produção de resenhas e debates em sala.",
       metrica:"+8 pp no Adequado (LP) e -13 pp no AB (LP)",
       pratica:"Leitura orientada semanal de textos jornalísticos (Folha de S.Paulo, G1 adaptado) e literários (Clarice Lispector, João Cabral de Melo Neto). Análise textual com foco em argumentação, inferência e coesão. Produção de resenhas e debates em sala a cada 15 dias."
     }
