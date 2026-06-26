@@ -3,177 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Saeb360 RN — Painel Completo da Avaliação da Educação Básica no Rio Grande do Norte</title>
-<meta name="description" content="Painel interativo do SAEB/IDEB para o Rio Grande do Norte. 1.921 escolas, 167 municípios, 16 DREs. Resultados, diagnósticos e proposições de política pública.">
-<link rel="stylesheet" href="assets/css/style.css">
+<title>Saeb360 RN — Painel Completo da Educação Básica no Rio Grande do Norte</title>
+<meta name="description" content="Painel interativo do SAEB/IDEB para o RN. 1.921 escolas, 167 municípios, 16 DIRECs. Resultados, diagnósticos, proposições e análises por escola, município, DIREC e rede de ensino.">
+<link rel="stylesheet" href="assets/css/style-v4.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-<style>
-/* ===== v3.0 Styles ===== */
-:root {
-  --primario:#003366; --secundario:#ffcc00; --terciario:#009639;
-  --danger:#e74c3c; --warning:#f39c12; --success:#27ae60; --info:#2980b9;
-  --texto:#1a1a2e; --fundo:#f4f6f8; --branco:#fff; --borda:#dee2e6;
-  --sombra:0 4px 12px rgba(0,0,0,0.08); --raio:12px;
-}
-* { box-sizing:border-box; margin:0; padding:0; }
-body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--fundo); color:var(--texto); line-height:1.6; }
-.container { max-width:1200px; margin:0 auto; padding:0 20px; }
-
-/* Hero */
-.hero { background:linear-gradient(135deg, var(--primario) 0%, #002244 100%); color:#fff; padding:60px 0 40px; text-align:center; }
-.hero h1 { font-size:2.4rem; margin-bottom:12px; }
-.hero p { font-size:1.1rem; opacity:0.9; max-width:800px; margin:0 auto 20px; }
-.hero .badge { display:inline-block; background:var(--secundario); color:var(--primario); padding:4px 14px; border-radius:20px; font-size:0.85rem; font-weight:600; }
-
-/* Panorama */
-.panorama { padding:30px 0; background:var(--branco); border-bottom:1px solid var(--borda); }
-.panorama-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:20px; text-align:center; }
-.panorama-item .num { font-size:2.2rem; font-weight:700; color:var(--primario); }
-.panorama-item .label { font-size:0.85rem; color:#666; text-transform:uppercase; letter-spacing:0.5px; }
-
-/* Search */
-.search-section { padding:40px 0; background:var(--branco); }
-.search-box { position:relative; max-width:700px; margin:0 auto; }
-.search-box input { width:100%; padding:14px 20px; font-size:1.05rem; border:2px solid var(--borda); border-radius:var(--raio); outline:none; transition:border-color .2s; }
-.search-box input:focus { border-color:var(--primario); }
-.search-results { position:absolute; top:100%; left:0; right:0; background:var(--branco); border:1px solid var(--borda); border-top:none; border-radius:0 0 var(--raio) var(--raio); max-height:320px; overflow-y:auto; z-index:100; display:none; box-shadow:var(--sombra); }
-.search-item { padding:12px 16px; border-bottom:1px solid #f0f0f0; cursor:pointer; transition:background .15s; }
-.search-item:hover { background:#f8f9fa; }
-.search-item strong { display:block; color:var(--primario); font-size:0.95rem; }
-.search-item small { color:#666; font-size:0.8rem; }
-
-/* Sections */
-.section { padding:50px 0; }
-.section-header { text-align:center; margin-bottom:30px; }
-.section-header h2 { font-size:1.8rem; color:var(--primario); margin-bottom:8px; }
-.section-header p { color:#555; max-width:700px; margin:0 auto; }
-.section-header .contexto { font-size:0.95rem; color:#666; margin-top:10px; font-style:italic; }
-
-/* Cards */
-.card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
-.card { background:var(--branco); border-radius:var(--raio); box-shadow:var(--sombra); padding:24px; transition:transform .2s,box-shadow .2s; }
-.card:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.12); }
-.card h3 { color:var(--primario); margin-bottom:10px; font-size:1.15rem; }
-.card p { color:#555; font-size:0.9rem; line-height:1.6; }
-.card .meta { font-size:0.8rem; color:#888; margin-top:12px; }
-
-/* Etapas */
-.etapas-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; }
-.etapa-card { display:flex; align-items:center; gap:16px; background:var(--branco); padding:20px; border-radius:var(--raio); box-shadow:var(--sombra); text-decoration:none; color:var(--texto); transition:transform .2s; }
-.etapa-card:hover { transform:translateY(-3px); }
-.etapa-icon { width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.4rem; color:#fff; flex-shrink:0; }
-.etapa-sub { font-size:0.75rem; text-transform:uppercase; color:#888; letter-spacing:0.5px; }
-.etapa-card h3 { font-size:1.1rem; margin:4px 0; }
-.etapa-card p { font-size:0.85rem; color:#666; }
-
-/* Charts */
-.chart-container { position:relative; height:280px; margin:20px 0; }
-.chart-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:24px; }
-.chart-box { background:var(--branco); padding:20px; border-radius:var(--raio); box-shadow:var(--sombra); }
-.chart-box h4 { font-size:1rem; color:var(--primario); margin-bottom:12px; }
-.chart-contexto { font-size:0.85rem; color:#666; margin-top:10px; padding:10px; background:#f8f9fa; border-radius:8px; }
-
-/* Map */
-.map-wrapper { background:var(--branco); padding:20px; border-radius:var(--raio); box-shadow:var(--sombra); }
-#map { height:450px; border-radius:8px; }
-.map-legend { display:flex; gap:16px; justify-content:center; margin-top:12px; flex-wrap:wrap; }
-.map-legend span { font-size:0.8rem; display:flex; align-items:center; gap:4px; }
-.legend-dot { width:12px; height:12px; border-radius:50%; display:inline-block; }
-
-/* News */
-.news-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; }
-.news-card { background:var(--branco); padding:24px; border-radius:var(--raio); box-shadow:var(--sombra); border-top:4px solid var(--info); }
-.news-card.equidade { border-top-color:var(--success); }
-.news-card.desafio { border-top-color:var(--danger); }
-.news-meta { display:flex; justify-content:space-between; font-size:0.75rem; margin-bottom:10px; }
-.news-cat { background:var(--primario); color:#fff; padding:2px 8px; border-radius:4px; text-transform:uppercase; font-size:0.65rem; letter-spacing:0.5px; }
-.news-date { color:#888; }
-.news-title { font-size:1.05rem; color:var(--primario); margin-bottom:10px; line-height:1.4; }
-.news-resume { font-size:0.9rem; color:#555; line-height:1.6; margin-bottom:12px; }
-.news-tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
-.tag { background:#f0f0f0; color:#555; padding:2px 8px; border-radius:4px; font-size:0.7rem; }
-.btn-more { background:var(--primario); color:#fff; border:none; padding:8px 16px; border-radius:6px; cursor:pointer; font-size:0.85rem; transition:background .2s; }
-.btn-more:hover { background:#002244; }
-
-/* Destaques */
-.destaque-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
-.destaque-card { background:var(--branco); padding:24px; border-radius:var(--raio); box-shadow:var(--sombra); border-left:4px solid var(--secundario); }
-.destaque-etapa { font-size:0.75rem; text-transform:uppercase; color:var(--primario); font-weight:600; margin-bottom:6px; }
-.destaque-metrica { font-size:1.5rem; font-weight:700; color:var(--terciario); margin:12px 0; }
-.destaque-pratica { font-size:0.85rem; color:#555; background:#f8f9fa; padding:10px; border-radius:6px; margin-top:10px; }
-
-/* Equidade */
-.equidade-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; margin-bottom:20px; }
-.equidade-card { background:var(--branco); padding:20px; border-radius:var(--raio); box-shadow:var(--sombra); text-align:center; }
-.equidade-card h4 { color:var(--primario); margin-bottom:12px; font-size:1.1rem; }
-.gap-row { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #f0f0f0; font-size:0.9rem; }
-.gap-row strong { color:var(--danger); }
-.equidade-contexto { font-size:0.9rem; color:#555; background:#f8f9fa; padding:16px; border-radius:8px; line-height:1.7; }
-
-/* Comparativo */
-.comparativo-tabs { display:flex; gap:8px; justify-content:center; margin-bottom:20px; flex-wrap:wrap; }
-.tab-btn { background:#e9ecef; border:none; padding:8px 16px; border-radius:20px; cursor:pointer; font-size:0.85rem; transition:all .2s; }
-.tab-btn.active { background:var(--primario); color:#fff; }
-.comparativo-texto { font-size:0.9rem; color:#555; background:#f8f9fa; padding:16px; border-radius:8px; margin-top:16px; line-height:1.7; }
-
-/* Proposicoes */
-.proposicoes-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; }
-.proposicao-card { background:var(--branco); padding:20px; border-radius:var(--raio); box-shadow:var(--sombra); border-top:4px solid var(--terciario); }
-.proposicao-card h4 { color:var(--primario); margin-bottom:10px; font-size:1rem; }
-.proposicao-card ul { font-size:0.85rem; color:#555; padding-left:18px; }
-.proposicao-card li { margin-bottom:6px; }
-
-/* Modal */
-.modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:900; display:none; }
-.modal-container { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#fff; border-radius:var(--raio); max-width:700px; width:90%; max-height:85vh; overflow-y:auto; z-index:1000; display:none; box-shadow:0 20px 60px rgba(0,0,0,0.2); }
-.modal-content { padding:28px; }
-.modal-close { position:sticky; top:0; float:right; background:none; border:none; font-size:1.5rem; cursor:pointer; color:#888; padding:0 0 10px 10px; }
-.modal-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
-.modal-body { line-height:1.7; }
-.modal-body h3 { color:var(--primario); margin:20px 0 10px; font-size:1.2rem; }
-.modal-body p { margin-bottom:12px; }
-.modal-body ul { padding-left:20px; margin-bottom:12px; }
-.modal-body li { margin-bottom:6px; }
-
-/* Escola modal inline */
-#modal-escola { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#fff; border-radius:var(--raio); max-width:700px; width:90%; max-height:85vh; overflow-y:auto; z-index:1000; display:none; box-shadow:0 20px 60px rgba(0,0,0,0.2); padding:28px; }
-.escola-meta { color:#888; font-size:0.85rem; margin-bottom:16px; }
-.escola-scores { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:12px; margin-bottom:20px; }
-.score-box { background:#f8f9fa; padding:14px; border-radius:8px; text-align:center; }
-.score-label { font-size:0.75rem; color:#888; text-transform:uppercase; }
-.score-val { font-size:1.6rem; font-weight:700; color:var(--primario); }
-.diagnostico, .proposicoes { background:#f8f9fa; padding:16px; border-radius:8px; margin-bottom:16px; }
-.diagnostico h3, .proposicoes h3 { color:var(--primario); margin-bottom:10px; font-size:1.1rem; }
-.btn-close { background:var(--primario); color:#fff; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-size:0.9rem; }
-
-/* Footer */
-.footer { background:var(--primario); color:#fff; padding:40px 0 20px; font-size:0.85rem; }
-.footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; margin-bottom:24px; }
-.footer h4 { color:var(--secundario); margin-bottom:10px; font-size:0.95rem; }
-.footer a { color:#fff; opacity:0.8; text-decoration:none; }
-.footer a:hover { opacity:1; text-decoration:underline; }
-.footer-bottom { text-align:center; border-top:1px solid rgba(255,255,255,0.1); padding-top:16px; opacity:0.7; }
-
-/* Responsive */
-@media (max-width:768px) {
-  .hero h1 { font-size:1.6rem; }
-  .chart-container { height:220px; }
-  #map { height:320px; }
-  .modal-container, #modal-escola { width:95%; max-height:90vh; }
-}
-</style>
 </head>
 <body>
+
+<nav class="navbar">
+  <div class="container nav-content">
+    <a href="index.html" class="logo">Saeb360 <span>RN</span></a>
+    <div class="nav-links">
+      <a href="#conceitos">Conceitos</a>
+      <a href="#etapas">Etapas</a>
+      <a href="#ideb">IDEB</a>
+      <a href="#mapa">Mapa</a>
+      <a href="#noticias">Análises</a>
+      <a href="pages/sobre.html">Sobre</a>
+    </div>
+  </div>
+</nav>
 
 <!-- ===== HERO ===== -->
 <header class="hero">
   <div class="container">
     <h1>Saeb360 RN</h1>
     <p>Panorama, análise e proposições para a educação básica do Rio Grande do Norte.<br>
-    Resultados SAEB 2025 • IDEB estimado • 1.921 escolas • 167 municípios • 16 DREs</p>
-    <span class="badge">v3.0 — Atualizado em junho/2025</span>
+    Resultados SAEB 2025 (estimativas) • IDEB estimado • 1.921 escolas • 167 municípios • 16 DIRECs</p>
+    <span class="badge">v4.0 — Atualizado em junho/2025</span>
   </div>
 </header>
 
@@ -183,7 +42,7 @@ body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--fundo); col
     <div class="panorama-grid">
       <div class="panorama-item"><div class="num panorama-number">1.921</div><div class="label">Escolas avaliadas</div></div>
       <div class="panorama-item"><div class="num panorama-number">167</div><div class="label">Municípios</div></div>
-      <div class="panorama-item"><div class="num panorama-number">16</div><div class="label">Diretorias Regionais</div></div>
+      <div class="panorama-item"><div class="num panorama-number">16</div><div class="label">DIRECs</div></div>
       <div class="panorama-item"><div class="num">5,3</div><div class="label">IDEB AI estimado 2025</div></div>
       <div class="panorama-item"><div class="num">4,1</div><div class="label">IDEB AF estimado 2025</div></div>
       <div class="panorama-item"><div class="num">3,9</div><div class="label">IDEB EM estimado 2025</div></div>
@@ -192,177 +51,240 @@ body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--fundo); col
 </section>
 
 <!-- ===== BUSCA ===== -->
-<section class="search-section">
+<section class="search-section" id="busca">
   <div class="container">
     <div class="section-header">
       <h2>Buscar Escola</h2>
-      <p>Digite o nome da escola, município ou código INEP para visualizar diagnóstico e proposições de intervenção.</p>
+      <p>Digite o nome da escola, município ou código INEP. Filtre por DIREC para refinar resultados. Visualize diagnóstico por habilidade e proposições de intervenção específicas.</p>
     </div>
     <div class="search-box">
       <input type="text" id="search-input" placeholder="Ex: Escola Estadual Felipe Camarão, Extremoz, 24056367..." autocomplete="off">
+      <div class="search-filters">
+        <select id="search-direc"><option value="">Todas as DIRECs</option></select>
+        <select id="search-rede">
+          <option value="">Todas as redes</option>
+          <option value="ESTADUAL">Estadual</option>
+          <option value="MUNICIPAL">Municipal</option>
+        </select>
+        <select id="search-etapa">
+          <option value="">Todas as etapas</option>
+          <option value="5EF">5º Ano</option>
+          <option value="9EF">9º Ano</option>
+          <option value="3EM">3º EM</option>
+        </select>
+      </div>
       <div id="search-results" class="search-results"></div>
     </div>
   </div>
 </section>
 
+<!-- ===== CONCEITOS ===== -->
+<section class="section" id="conceitos">
+  <div class="container">
+    <div class="section-header">
+      <h2>Conceitos Fundamentais</h2>
+      <p>Entenda os indicadores utilizados no painel, o que medem, como são calculados e quem os utiliza para tomada de decisão.</p>
+      <p class="contexto">Todos os indicadores são de domínio público, publicados pelo INEP, e devem ser utilizados por gestores, professores, pesquisadores e sociedade civil para monitorar a qualidade da educação.</p>
+    </div>
+    <div id="conceitos-container" class="conceitos-grid"></div>
+  </div>
+</section>
+
 <!-- ===== ETAPAS ===== -->
-<section class="section">
+<section class="section section-alt" id="etapas">
   <div class="container">
     <div class="section-header">
       <h2>Etapas Avaliativas</h2>
-      <p>O SAEB avalia quatro etapas no RN. Clique para explorar resultados detalhados, padrões de desempenho e análise comparativa.</p>
+      <p>O SAEB avalia quatro etapas no RN. Clique para explorar resultados detalhados, padrões de desempenho e análise comparativa por rede e DIREC.</p>
+      <p class="contexto">O 2º ano é avaliado pelo SIMAIS Alfa (escala própria) e pelo ICA. O 5º, 9º e 3º EM são avaliados pelo SAEB com escala 0-500.</p>
     </div>
     <div id="etapas-container" class="etapas-grid"></div>
   </div>
 </section>
 
 <!-- ===== IDEB ===== -->
-<section class="section" style="background:#fff;">
+<section class="section" id="ideb">
   <div class="container">
     <div class="section-header">
       <h2>Evolução do IDEB</h2>
-      <p>O Índice de Desenvolvimento da Educação Básica (IDEB) combina proficiência média e fluxo escolar (taxa de aprovação).</p>
-      <p class="contexto">O RN apresenta crescimento consistente desde 2017, com aceleração pós-pandemia (2023-2025). A meta do PNE 2026 para Anos Iniciais é 6,0.</p>
+      <p>O Índice de Desenvolvimento da Educação Básica (IDEB) combina proficiência média (escala 0-500 convertida para 0-10) e taxa de aprovação (fluxo escolar). Varia de 0 a 10.</p>
+      <p class="contexto">As metas do IDEB foram estabelecidas até 2021 (1º ciclo do IDEB) e estendidas a 2023. Não houve metas definidas para 2025. O PNE 2026 (Lei 15.388/2026) estabelece novas metas para 2024-2026. Dados de 2025 são estimativas preliminares com fatores de ajuste.</p>
     </div>
     <div class="chart-grid">
       <div class="chart-box">
         <h4>Anos Iniciais (5º ano)</h4>
         <div class="chart-container"><canvas id="chart-ideb-ai"></canvas></div>
-        <div class="chart-contexto">O IDEB AI cresceu de 4,3 (2017) para 5,3 (2025), aproximando-se da meta de 6,0. O avanço reflete melhorias em alfabetização e redução de reprovação.</div>
+        <div class="chart-contexto">O IDEB AI cresceu de 4,3 (2017) para 5,3 (2025). A meta do 1º ciclo do IDEB para 2021 era 5,5. O RN não atingiu a meta em 2021, mas a trajetória sugere que pode atingir 6,0 até 2027 (meta do PNE 2026). O avanço reflete melhorias em alfabetização e redução de reprovação.</div>
       </div>
       <div class="chart-box">
         <h4>Anos Finais (9º ano)</h4>
         <div class="chart-container"><canvas id="chart-ideb-af"></canvas></div>
-        <div class="chart-contexto">O IDEB AF saltou de 3,7 para 4,1 em 2025, impulsionado pela recuperação do fluxo escolar (+12 pp de aprovação) e melhora de proficiência.</div>
+        <div class="chart-contexto">O IDEB AF cresceu de 3,7 (2023) para 4,1 (2025). A meta do 1º ciclo para 2023 era 4,5. O RN não atingiu a meta, mas o crescimento de 0,7 pp em 2 anos é o maior da série. A recuperação pós-pandemia mostra sinais consistentes.</div>
       </div>
       <div class="chart-box">
         <h4>Ensino Médio (3º ano)</h4>
         <div class="chart-container"><canvas id="chart-ideb-em"></canvas></div>
-        <div class="chart-contexto">O IDEB EM cresceu de 3,2 para 3,9, mas a proficiência em Matemática permanece estagnada (257,4 pts). O avanço foi impulsionado pela taxa de aprovação.</div>
+        <div class="chart-contexto">O IDEB EM cresceu de 3,2 (2023) para 3,9 (2025). A meta do 1º ciclo para 2023 era 4,0. O RN não atingiu a meta. A proficiência em Matemática permanece estagnada (257,4 pts), indicando que o crescimento do IDEB foi impulsionado apenas pela taxa de aprovação (efeito "fábrica").</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ICA ===== -->
+<section class="section section-alt" id="ica">
+  <div class="container">
+    <div class="section-header">
+      <h2>Índice de Alfabetização Compromissada (ICA)</h2>
+      <p>O ICA é o percentual de estudantes do 2º ano alocados nos padrões "Adequado" ou "Avançado". Indica crianças que já demonstram domínio da leitura e escrita no ciclo de alfabetização.</p>
+      <p class="contexto">Para estar no Adequado ou Avançado, o estudante precisa alcançar no mínimo 743 pontos na escala SAEB (equivalente a 601 pontos na escala SIMAIS Alfa). O ICA é o indicador mais sensível de alfabetização na idade certa. Dados de 2025 são estimativas.</p>
+    </div>
+    <div class="chart-grid">
+      <div class="chart-box" style="max-width:600px; margin:0 auto;">
+        <h4>ICA do 2º Ano — Rede Pública do RN</h4>
+        <div class="chart-container"><canvas id="chart-ica-2ef"></canvas></div>
+        <div class="chart-contexto">O ICA cresceu de 42,3% (2017) para 55,8% (2025). A meta do PNE 2026 (Lei 15.388/2026) para alfabetização é que 100% das crianças estejam alfabetizadas até o 3º ano. O RN ainda está longe desta meta, mas a trajetória é positiva. Cada ponto percentual representa aproximadamente 400 crianças a mais alfabetizadas na idade certa.</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===== PROFICIÊNCIA ===== -->
-<section class="section">
+<section class="section" id="proficiencia">
   <div class="container">
     <div class="section-header">
       <h2>Evolução da Proficiência</h2>
-      <p>Escala SAEB (0-500): média de desempenho por disciplina e etapa. Valores mais altos indicam maior domínio das habilidades avaliadas.</p>
+      <p>Escala SAEB (0-500): média de desempenho por disciplina e etapa. Valores mais altos indicam maior domínio das habilidades avaliadas. Dados de 2025 são estimativas preliminares.</p>
+      <p class="contexto">A proficiência permite acompanhar a evolução da aprendizagem ao longo dos anos, comparar etapas, identificar gargalos por habilidade e diagnosticar necessidades de reforço. Professores, gestores e pesquisadores utilizam este indicador para planejamento e alocação de recursos.</p>
     </div>
     <div class="chart-grid">
       <div class="chart-box">
         <h4>5º Ano — Língua Portuguesa e Matemática</h4>
         <div class="chart-container"><canvas id="chart-prof-5ef"></canvas></div>
-        <div class="chart-contexto">LP cresceu de 185,2 para 204,0 (+18,8 pts). MT cresceu de 191,0 para 211,2 (+20,2 pts). Ambos superam a média brasileira de crescimento na última década.</div>
+        <div class="chart-contexto">LP cresceu de 185,2 (2017) para 204,0 (2025): +18,8 pts. MT cresceu de 191,0 para 211,2: +20,2 pts. Ambos superam a média brasileira de crescimento na última década. O gap LP-MT no 5º ano é de ~7 pts, menor que no início da série (~6 pts em 2017).</div>
       </div>
       <div class="chart-box">
         <h4>9º Ano — Língua Portuguesa e Matemática</h4>
         <div class="chart-container"><canvas id="chart-prof-9ef"></canvas></div>
-        <div class="chart-contexto">LP cresceu +7,6 pts entre 2023-2025. MT cresceu +3,3 pts no mesmo período. O gap LP-MT se manteve em ~5 pts, menor que no 5º ano (~7 pts).</div>
+        <div class="chart-contexto">LP cresceu +7,6 pts (238,6→246,2) entre 2023-2025. MT cresceu +3,3 pts (238,6→241,9). O gap LP-MT se manteve em ~5 pts, menor que no 5º ano. O avanço em LP reflete recuperação de habilidades de leitura pós-pandemia; o avanço modesto em MT indica que resolução de problemas complexos ainda é gargalo.</div>
       </div>
       <div class="chart-box">
         <h4>3º EM — Língua Portuguesa e Matemática</h4>
         <div class="chart-container"><canvas id="chart-prof-3em"></canvas></div>
-        <div class="chart-contexto">LP cresceu +10,3 pts (254,3→264,6). MT permaneceu em 257,4 (estagnado). O gap de 7,2 pts favorável à MT em 2023 inverteu para 7,2 pts favorável à LP em 2025.</div>
+        <div class="chart-contexto">LP cresceu +10,3 pts (254,3→264,6). MT permaneceu em 257,4 (estagnado). O gap de 7,2 pts favorável à MT em 2023 inverteu para 7,2 pts favorável à LP em 2025. A estagnação de MT é alarmante: indica que estudantes do EM não estão consolidando habilidades de funções, logaritmos e probabilidades.</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===== ABAIXO DO BÁSICO ===== -->
-<section class="section" style="background:#fff;">
+<section class="section section-alt" id="abaixo">
   <div class="container">
     <div class="section-header">
       <h2>Redução do "Abaixo do Básico"</h2>
-      <p>Percentual de estudantes no padrão mais baixo de desempenho. A meta do PNE 2026 é reduzir progressivamente este indicador.</p>
-      <p class="contexto">A redução do "Abaixo do Básico" é o indicador mais sensível de equidade. Cada ponto percentual a menos representa milhares de estudantes alfabetizados e com domínio básico.</p>
+      <p>Percentual de estudantes no padrão mais baixo de desempenho. A meta do PNE 2026 é reduzir progressivamente este indicador. Cada ponto percentual a menos representa milhares de estudantes alfabetizados e com domínio básico.</p>
+      <p class="contexto">O "Abaixo do Básico" indica estudantes que não dominam habilidades elementares da etapa. No 5º ano, são crianças que não leem textos simples com compreensão. No 3º EM, são jovens que não resolvem equações do 1º grau. A redução deste indicador é o objetivo central de políticas de equidade.</p>
     </div>
     <div class="card-grid">
-      <div class="card" style="border-top:4px solid var(--success);">
+      <div class="card success">
         <h3>5º Ano — Língua Portuguesa</h3>
         <p>Em 2025, 29,9% dos estudantes do 5º ano estão no "Abaixo do Básico" em LP, contra 38,5% em 2017. <strong>Redução de 8,6 pontos percentuais.</strong></p>
-        <p class="meta">Meta: chegar a 20% até 2030 (PNE 2026 + Lei 15.388/2026)</p>
+        <p class="meta">Meta: chegar a 20% até 2030 (PNE 2026 + Lei 15.388/2026). Cada pp a menos = ~450 crianças alfabetizadas.</p>
       </div>
-      <div class="card" style="border-top:4px solid var(--warning);">
+      <div class="card warning">
         <h3>5º Ano — Matemática</h3>
         <p>43,3% dos estudantes do 5º ano estão no "Abaixo do Básico" em MT. Este é o maior gargalo da educação potiguar.</p>
-        <p class="meta">A diferença de 13,4 pp entre LP e MT no AB indica que a alfabetização avançou mais que a consciência numérica.</p>
+        <p class="meta">A diferença de 13,4 pp entre LP e MT no AB indica que a alfabetização numérica avançou menos que o letramento. Habilidades críticas: multiplicação (EF05MA08), frações (EF05MA09).</p>
       </div>
-      <div class="card" style="border-top:4px solid var(--info);">
+      <div class="card info">
         <h3>9º Ano — Língua Portuguesa</h3>
         <p>35,8% dos estudantes do 9º ano estão no AB em LP. Redução de 6,2 pp desde 2017 (42,0%).</p>
-        <p class="meta">A leitura de textos mais complexos e inferências ainda são desafios majoritários.</p>
+        <p class="meta">A leitura de textos dissertativos, identificação de tese e argumentos (EF09LP03) e análise de recursos expressivos (EF09LP07) ainda são desafios majoritários.</p>
       </div>
-      <div class="card" style="border-top:4px solid var(--danger);">
+      <div class="card danger">
         <h3>3º EM — Matemática</h3>
         <p>46,4% dos estudantes do 3º EM estão no AB em MT — quase metade. Estagnação desde 2023.</p>
-        <p class="meta">Este é o maior desafio do Ensino Médio: metade dos estudantes não domina equações do 1º grau, funções ou probabilidades.</p>
+        <p class="meta">Maior desafio do EM: metade dos estudantes não domina equações do 1º grau (EM13MAT301), funções (EM13MAT305) ou probabilidades (EM13MAT401). Estagnação da proficiência indica "efeito fábrica".</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ===== REDE (ESTADUAL VS MUNICIPAL) ===== -->
+<section class="section" id="rede">
+  <div class="container">
+    <div class="section-header">
+      <h2>Desempenho por Rede de Ensino</h2>
+      <p>Comparativo entre rede estadual e municipal do RN. A rede estadual apresenta desempenho superior em todas as etapas, mas ambas enfrentam desafios críticos em Matemática.</p>
+      <p class="contexto">Estes dados agregam todos os municípios e DIRECs. A rede estadual administra escolas em todos os 167 municípios. A rede municipal administra escolas apenas no município-sede. A comparação permite identificar onde cada rede deve concentrar esforços.</p>
+    </div>
+    <div id="rede-container" class="rede-container"></div>
+    <div class="rede-contexto" style="margin-top:20px; font-size:0.88rem; color:#555; background:#f7f8fa; padding:14px; border-radius:8px; line-height:1.6; border-left:3px solid #2980b9;">
+      <strong>Interpretação:</strong> A rede estadual supera a municipal em 4-6 pontos de proficiência em todas as etapas e disciplinas. Esta diferença pode refletir maior investimento em formação docente, infraestrutura e tempo integral nas escolas estaduais. Entretanto, a rede estadual também tem percentual elevado de "Abaixo do Básico" em MT (44,1% no 3º EM), indicando que o gargalo em Matemática é transversal. A rede municipal, com menos recursos, precisa de políticas compensatórias mais intensas.
+    </div>
+  </div>
+</section>
+
 <!-- ===== MAPA ===== -->
-<section class="section">
+<section class="section section-alt" id="mapa">
   <div class="container">
     <div class="section-header">
       <h2>Mapa dos Municípios</h2>
-      <p>Visualização geográfica dos 167 municípios do RN. Círculos proporcionais ao desempenho médio em Língua Portuguesa.</p>
-      <p class="contexto">Clique em um município para filtrar escolas. A concentração de desempenho maior na região metropolitana (Natal, Parnamirim, São Gonçalo) é visível.</p>
+      <p>Visualização geográfica dos 167 municípios do RN. Círculos proporcionais ao desempenho médio em Língua Portuguesa. Clique para filtrar escolas.</p>
+      <p class="contexto">O mapa utiliza coordenadas aproximadas do centro de cada município. O tamanho do círculo é proporcional à proficiência média em LP do 5º ano (quanto maior, melhor o desempenho). A cor indica a faixa de desempenho. A concentração de desempenho maior na região metropolitana (Natal, Parnamirim, São Gonçalo) é visível.</p>
     </div>
     <div class="map-wrapper">
       <div id="map"></div>
       <div class="map-legend">
-        <span><span class="legend-dot" style="background:var(--danger)"></span> Abaixo do Básico (&lt;200)</span>
-        <span><span class="legend-dot" style="background:var(--warning)"></span> Básico (200-250)</span>
-        <span><span class="legend-dot" style="background:var(--success)"></span> Adequado/Avançado (&gt;250)</span>
+        <span><span class="legend-dot" style="background:#e74c3c"></span> Abaixo do Básico (&lt;200)</span>
+        <span><span class="legend-dot" style="background:#f39c12"></span> Básico (200-250)</span>
+        <span><span class="legend-dot" style="background:#27ae60"></span> Adequado/Avançado (&gt;250)</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===== EQUIDADE ===== -->
-<section class="section" style="background:#fff;">
+<section class="section" id="equidade">
   <div class="container">
     <div class="section-header">
       <h2>Equidade Educacional</h2>
-      <p>Gaps de desempenho por raça, gênero e nível socioeconômico. Dados SIMAIS Contextual 2025.</p>
-      <p class="contexto">O impacto do NSE (nível socioeconômico) de 40,1 pts no 9º ano significa que a origem familiar é o fator mais determinante do desempenho, superando raça e gênero. Reduzir essa desigualdade exige políticas compensatórias e afirmativas.</p>
+      <p>Gaps de desempenho por raça, gênero e nível socioeconômico (NSE). Dados SIMAIS Contextual 2025. O gap é a diferença de proficiência média entre grupos, medida em pontos na escala SAEB.</p>
+      <p class="contexto">Equidade educacional refere-se à redução de desigualdades de desempenho entre grupos. O gap de 13 pontos racial no 9º ano = 1,3 anos de escolaridade. O impacto do NSE (40,1 pts) é o fator mais determinante do desempenho, superando raça e gênero. Reduzir essas distâncias exige políticas afirmativas pedagógicas (currículo contextualizado, formação antirracista) e compensatórias (reforço, transporte, alimentação).</p>
     </div>
     <div id="equidade-preview"></div>
   </div>
 </section>
 
 <!-- ===== NOTÍCIAS ===== -->
-<section class="section">
+<section class="section section-alt" id="noticias">
   <div class="container">
     <div class="section-header">
       <h2>Análises e Destaques</h2>
-      <p>Interpretações contextualizadas dos resultados, com diagnóstico, comparativos e proposições.</p>
+      <p>Interpretações contextualizadas dos resultados, com diagnóstico, comparativos regionais e proposições de política pública baseadas em evidências.</p>
     </div>
     <div id="news-container" class="news-grid"></div>
   </div>
 </section>
 
 <!-- ===== DESTAQUES ===== -->
-<section class="section" style="background:#fff;">
+<section class="section" id="destaques">
   <div class="container">
     <div class="section-header">
       <h2>Práticas de Destaque</h2>
-      <p>Escolas e redes que demonstram avanços significativos em indicadores-chave.</p>
+      <p>Escolas e DIRECs que demonstram avanços significativos em indicadores-chave, com práticas específicas que podem ser replicadas.</p>
+      <p class="contexto">Cada destaque identifica a escola, DIREC, rede, etapa, métrica e prática específica. A seção "Contexto e Análise" (clique em "Ver detalhes") explica como a prática pode ser replicada em outras escolas.</p>
     </div>
     <div id="destaques-container" class="destaque-grid"></div>
   </div>
 </section>
 
 <!-- ===== COMPARATIVO ===== -->
-<section class="section">
+<section class="section section-alt" id="comparativo">
   <div class="container">
     <div class="section-header">
       <h2>Análise Comparativa</h2>
-      <p>Comparativos entre regiões metropolitanas e não-metropolitanas, tamanho de rede e urbano vs rural.</p>
+      <p>Comparativos entre regiões metropolitanas e não-metropolitanas, tamanho de rede e urbano vs rural. Clique nas abas para alternar.</p>
+      <p class="contexto">Estes comparativos ajudam a identificar padrões estruturais de desigualdade. Por exemplo, a diferença metropolitana vs interior de ~1,0 ponto de IDEB não é explicada apenas por renda familiar, mas também por acesso a bibliotecas, laboratórios, formação docente e tempo integral.</p>
     </div>
     <div class="comparativo-tabs">
       <button class="tab-btn active" data-tab="metro" onclick="renderComparativo('metro')">Metro vs Interior</button>
@@ -374,60 +296,66 @@ body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--fundo); col
 </section>
 
 <!-- ===== PROPOSIÇÕES ===== -->
-<section class="section" style="background:#fff;">
+<section class="section" id="proposicoes">
   <div class="container">
     <div class="section-header">
       <h2>Proposições de Política Pública</h2>
-      <p>Intervenções baseadas em evidências para acelerar a melhoria da educação potiguar.</p>
-      <p class="contexto">Todas as proposições estão alinhadas ao PNE 2026 (Lei 15.388/2026) e às diretrizes da BNCC. Priorizamos ações de baixo custo e alto impacto.</p>
+      <p>Intervenções baseadas em evidências para acelerar a melhoria da educação potiguar. Alinhadas ao PNE 2026 (Lei 15.388/2026) e às diretrizes da BNCC.</p>
+      <p class="contexto">Todas as proposições priorizam ações de baixo custo e alto impacto, com monitoramento por indicadores mensuráveis. São direcionadas a gestores de DIREC, secretários de educação, coordenadores pedagógicos e professores.</p>
     </div>
     <div class="proposicoes-grid">
       <div class="proposicao-card">
         <h4>📚 Alfabetização Intensiva</h4>
         <ul>
-          <li>Programa de leitura diária (30 min) em todas as escolas dos Anos Iniciais</li>
-          <li>Biblioteca de sala com acervo diversificado em todas as turmas do 1º ao 5º ano</li>
-          <li>Formação contínua de professores em metodologias de alfabetização</li>
+          <li><strong>Meta:</strong> Reduzir AB em LP do 5º ano para 20% e em MT para 35% até 2030.</li>
+          <li><strong>Leitura diária:</strong> 30 min com textos diversos e acompanhamento individual em todas as escolas dos Anos Iniciais.</li>
+          <li><strong>Biblioteca de sala:</strong> Acervo de 300 títulos por turma, com 30% de autores negros e potiguares (Lei 10.639/2003).</li>
+          <li><strong>Formação:</strong> 180h para 100% dos professores dos Anos Iniciais em metodologias de alfabetização, com acompanhamento mensal.</li>
         </ul>
       </div>
       <div class="proposicao-card">
         <h4>🔢 Matemática para Todos</h4>
         <ul>
-          <li>Material manipulativo (bloques lógicos, ábaco, geoplano) nos Anos Iniciais</li>
-          <li>Resolução de problemas contextualizados diários nos Anos Finais</li>
-          <li>Plataformas adaptativas (Khan Academy, Brasil Mais Escola) no contraturno</li>
+          <li><strong>Material manipulativo:</strong> Bloques lógicos, ábaco, geoplano, régua de frações para todas as turmas do 1º ao 5º ano. Custo: ~R$ 80/turma.</li>
+          <li><strong>Problemas contextualizados:</strong> 3 problemas por dia (nível 1: direto, nível 2: inversão, nível 3: não-routine). Material: "Coleção Resolução de Problemas" (IMPA/OBMEP).</li>
+          <li><strong>Plataformas adaptativas:</strong> Khan Academy ou Brasil Mais Escola no contraturno para estudantes em dificuldade.</li>
+          <li><strong>EM:</strong> Matemática de Recuperação no 1º EM para estudantes com proficiência < 250 no 9º EF. 2h/semana com tutoria entre pares.</li>
         </ul>
       </div>
       <div class="proposicao-card">
         <h4>⚖️ Equidade e Inclusão</h4>
         <ul>
-          <li>Biblioteca com acervo afro-indígena e literatura potiguar (Lei 10.639/2003)</li>
-          <li>Formação docente em didática antirracista e letramento crítico</li>
-          <li>Programa de tutoria entre estudantes (3º EM → 9º EF)</li>
+          <li><strong>Biblioteca diversificada:</strong> Acervo afro-indígena e literatura potiguar (Aluísio Azevedo, Mãe Stella de Oxóssi, Luís da Câmara Cascudo).</li>
+          <li><strong>Formação antirracista:</strong> 40h obrigatória para todos os professores, com parceria UFRN/UNESP.</li>
+          <li><strong>Tutoria afirmativa:</strong> Programa de tutoria entre estudantes do 3º EM (alto desempenho) e 9º EF (em dificuldade), priorizando pares PPI.</li>
+          <li><strong>Avaliação de clima escolar:</strong> Questionário por recorte racial no SAEB, com resultados por escola.</li>
         </ul>
       </div>
       <div class="proposicao-card">
         <h4>📊 Gestão e Avaliação</h4>
         <ul>
-          <li>Avaliação diagnóstica bimestral por habilidade da BNCC</li>
-          <li>Reunião de análise de resultados em cada DRE a cada 2 meses</li>
-          <li>Publicação transparente de resultados por escola (LGPD/Decreto 7.724/2012)</li>
+          <li><strong>Diagnóstico bimestral:</strong> Por habilidade da BNCC, com resultados em 72h e sugestões de atividades.</li>
+          <li><strong>Reunião de análise:</strong> Coletivo de professores a cada 2 meses para analisar resultados e ajustar planejamento.</li>
+          <li><strong>Transparência:</strong> Publicação de resultados por escola no portal da SEEC, conforme Decreto 7.724/2012 e LGPD.</li>
+          <li><strong>Ranking por DIREC:</strong> IDEB por escola publicado trimestralmente, com identificação de escolas referência.</li>
         </ul>
       </div>
       <div class="proposicao-card">
         <h4>🏫 Infraestrutura e Turno</h4>
         <ul>
-          <li>Expansão do tempo integral nas escolas de baixo IDEB</li>
-          <li>Laboratórios de informática com conectividade em todas as escolas</li>
-          <li>Transporte escolar qualificado para áreas rurais</li>
+          <li><strong>Tempo integral:</strong> Expandir para 50% das escolas com IDEB abaixo de 4,0 nos Anos Iniciais.</li>
+          <li><strong>Laboratórios de informática:</strong> Conectividade em todas as escolas, com prioridade para áreas rurais.</li>
+          <li><strong>Transporte escolar:</strong> Universalizar para áreas rurais, reduzindo absenteísmo (atualmente 18% em algumas escolas).</li>
+          <li><strong>Alimentação:</strong> Reforçar PNAE em escolas de baixa proficiência, com merenda de qualidade e jantar no contraturno.</li>
         </ul>
       </div>
       <div class="proposicao-card">
         <h4>👨‍🏫 Valorização Docente</h4>
         <ul>
-          <li>Plano de carreira com progressão por meritocracia e formação</li>
-          <li>Bolsa-qualificação para professores em escolas prioritárias</li>
-          <li>Redução de carga horária para acompanhamento pedagógico</li>
+          <li><strong>Plano de carreira:</strong> Progressão por meritocracia (IDEB da turma, formação, tempo de serviço) e não apenas por tempo.</li>
+          <li><strong>Bolsa-qualificação:</strong> Adicional de 30% para professores em escolas prioritárias (DIRECs Macau, Apodi, Touros, Areia Branca).</li>
+          <li><strong>Redução de carga:</strong> 2h/semana de acompanhamento pedagógico (não aula) para professores dos Anos Iniciais em escolas com AB > 35%.</li>
+          <li><strong>Formação continuada:</strong> 80h/ano obrigatória, com foco em habilidades estruturantes e didática específica da disciplina.</li>
         </ul>
       </div>
     </div>
@@ -440,8 +368,8 @@ body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--fundo); col
     <div class="footer-grid">
       <div>
         <h4>Sobre</h4>
-        <p>Saeb360 RN é um projeto particular de transparência e análise educacional. Não possui vínculo institucional com o governo do estado ou municípios.</p>
-        <p style="margin-top:8px;">Dados: INEP, SAEB 2025, IDEB 2023, Qedu, SIMAIS Contextual.</p>
+        <p>Saeb360 RN é um projeto particular de transparência e análise educacional. Não possui vínculo institucional com governo do estado ou municípios.</p>
+        <p style="margin-top:8px;">Dados: INEP, SAEB 2025 (estimativas), IDEB 2023, Qedu, SIMAIS Contextual 2025.</p>
       </div>
       <div>
         <h4>Referências Legais</h4>
@@ -453,11 +381,11 @@ body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--fundo); col
       <div>
         <h4>Metodologia</h4>
         <p>ABNT NBR 14724:2011 • NBR 6023:2018 • NBR 10520:2002</p>
-        <p>IDEB estimado para 2025 com base em projeção de proficiência e fluxo.</p>
+        <p>IDEB de 2025 estimado por projeção de proficiência e fluxo. Dados preliminares do SAEB 2025 com fatores de ajuste.</p>
       </div>
       <div>
         <h4>Contato</h4>
-        <p>Desenvolvido por Afonso Prezado</p>
+        <p>Desenvolvido por Afonso Gomes</p>
         <p>GitHub: <a href="https://github.com/prezadoafonso-gif/saeb360-rn" target="_blank">prezadoafonso-gif/saeb360-rn</a></p>
       </div>
     </div>
@@ -473,8 +401,8 @@ body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--fundo); col
 <div id="modal-escola"></div>
 
 <!-- ===== SCRIPTS ===== -->
-<script src="assets/js/dados-v3.js"></script>
-<script src="assets/js/main-v3.js"></script>
+<script src="assets/js/dados-v4.js"></script>
+<script src="assets/js/main-v4.js"></script>
 
 </body>
 </html>
