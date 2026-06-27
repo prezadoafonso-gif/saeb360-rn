@@ -9,7 +9,7 @@ const DADOS_BASE = {
     nome: "Saeb360 RN",
     versao: "3.0",
     atualizado: "2025-06-25",
-    nota: "Resultados SAEB 2025 preliminares. IDEB estimado. Divulgação oficial INEP prevista para 08/06/2026."
+    nota: "Resultados SAEB 2025 preliminares. IDEB estimado. Divulgação oficial INEP prevista para final de junho/2026."
   },
 
   panorama: {
@@ -63,7 +63,7 @@ const DADOS_BASE = {
 
   diretorias: [
     {id:"01",nome:"DRE Natal",tipo:"metropolitana"},
-    {id:"02",nome:"DRE Mossoró",tipo:"não-metropolitana"},
+    {id:"02",nome:"DRE Mossoró",tipo:"metropolitana"},
     {id:"03",nome:"DRE Caicó",tipo:"não-metropolitana"},
     {id:"04",nome:"DRE Currais Novos",tipo:"não-metropolitana"},
     {id:"05",nome:"DRE Apodi",tipo:"não-metropolitana"},
