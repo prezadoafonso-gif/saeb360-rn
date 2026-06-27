@@ -2,7 +2,7 @@
 
 ## 🌐 Visão Geral
 
-**Saeb360 RN** é um painel digital completo, gratuito e interativo, dedicado ao acompanhamento dos resultados do **SAEB** (Sistema de Avaliação da Educação Básica), **IDEB** (Índice de Desenvolvimento da Educação Básica), **ICA** (Indicador Criança Alfabetizada) e **SIMAIS** (Sistema de Avaliação do RN) para todas as escolas estaduais e municipais, redes públicas de ensino e municípios do estado do **Rio Grande do Norte**, Brasil.
+**Saeb360 RN** é um painel digital completo, gratuito e interativo, dedicado ao acompanhamento dos resultados do **SAEB** (Sistema de Avaliação da Educação Básica), **IDEB** (Índice de Desenvolvimento da Educação Básica), **ICA** (Indicador Criança Alfabetizada) e **SIMAIS** (Sistema de Monitoramento e Avaliação Institucional do RN) para todas as escolas estaduais e municipais, redes públicas de ensino e municípios do estado do **Rio Grande do Norte**, Brasil.
 
 O site oferece:
 - 📊 **Dashboards interativos** com gráficos de evolução histórica (2017–2025)
@@ -264,7 +264,7 @@ O design utiliza as cores oficiais do estado do Rio Grande do Norte:
 
 **Saeb360 RN** é um projeto de iniciativa particular, desenvolvido de forma independente por **Afonso Gomes**, sem vínculo institucional formal com o INEP, a SEEC-RN ou qualquer órgão público.
 
-O projeto é oferecido gratuitamente em sua fase inicial, sem fins lucrativos, com o propósito de democratizar o acesso a informações educacionais públicas. A depender das condições legais e da viabilidade técnica, poderá ser monetizado futuramente (por exemplo, por meio de publicidade, serviços premium ou parcerias institucionais), sempre respeitando a legislação vigente, a Lei Geral de Proteção de Dados (LGPD - Lei 13.709/2018) e os direitos autorais das fontes de dados.
+O projeto é oferecido gratuitamente em sua fase inicial, sem fins lucrativos, com o propósito de democratizar o acesso a informações educacionais públicas. Para fins de sustentabilidade, poderá ser monetizado futuramente (por exemplo, por meio de publicidade, serviços premium ou parcerias institucionais), sempre em consonância com a legislação vigente, a Lei Geral de Proteção de Dados (LGPD - Lei 13.709/2018) e os direitos autorais das fontes de dados.
 
 As análises, proposições, interpretações e notícias geradas são de responsabilidade exclusiva do mantenedor do projeto. Os dados oficiais devem ser sempre consultados nos portais do INEP para fins decisórios formais.
 
