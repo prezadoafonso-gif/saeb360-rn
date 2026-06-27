@@ -12,8 +12,8 @@
       "Todos pela Educação - Panorama RN 2023",
       "IBGE - GeoJSON municípios RN"
     ],
-    "responsavel": "SUAVE/SEEC/RN - Afonso Gomes Ferreira Filho",
-    "nota_2025": "Resultados SAEB 2025 preliminares. IDEB estimado. Divulgação oficial INEP prevista para 08/06/2026."
+    "responsavel": "Afonso Gomes",
+    "nota_2025": "Resultados SAEB 2025 preliminares. IDEB estimado. Divulgação oficial INEP prevista para final de junho/2026."
   },
 
   "panorama_estado": {
@@ -136,7 +136,7 @@
   "diretorias_educacao": [
     {"id": "01", "nome": "Diretoria Regional de Educação de Natal", "sigla": "DREN", "tipo": "metropolitana"},
     {"id": "02", "nome": "Diretoria Regional de Educação de Mossoró", "sigla": "DREMO", "tipo": "não-metropolitana"},
-    {"id": "03", "nome": "Diretoria Regional de Educação de Caicó", "sigla": "DRECA", "tipo": "não-metropolitana"},
+    {"id": "03", "nome": "Diretoria Regional de Educação de Caicó", "sigla": "DRECA", "tipo": "metropolitana"},
     {"id": "04", "nome": "Diretoria Regional de Educação de Currais Novos", "sigla": "DRECN", "tipo": "não-metropolitana"},
     {"id": "05", "nome": "Diretoria Regional de Educação de Apodi", "sigla": "DREAP", "tipo": "não-metropolitana"},
     {"id": "06", "nome": "Diretoria Regional de Educação de Pau dos Ferros", "sigla": "DREPF", "tipo": "não-metropolitana"},
