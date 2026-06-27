@@ -6,7 +6,7 @@
 const i18n = {
   pt: {
     site_name: 'Saeb360 RN',
-    tagline: 'Sistema de Avaliação da Educação Básica do Rio Grande do Norte',
+    tagline: 'Panorama da Educação Básica do Rio Grande do Norte',
     nav: {
       home: 'Início',
       etapas: 'Etapas',
@@ -60,9 +60,9 @@ const i18n = {
       title: 'Equidade Educacional',
       subtitle: 'Reduzir desigualdades é garantir qualidade para todos. Análise de gaps raciais, de gênero, socioeconômicos e territoriais.',
       cards: {
-        racial: { title: 'Gap Racial', desc: 'Diferença de proficiência entre estudantes PPI e brancos/amarelos' },
+        racial: { title: 'Gap Racial', desc: 'Diferença de proficiência entre estudantes PPI (pretos, pardos e indígenas) e brancos/amarelos' },
         genero: { title: 'Gap de Gênero', desc: 'Diferença de desempenho entre meninas e meninos em LP e MT' },
-        nse: { title: 'Nível Socioeconômico', desc: 'Comparação entre alunos de baixo e alto NSE' },
+        nse: { title: 'Nível Socioeconômico', desc: 'Comparação entre alunos de baixo e alto NSE (Nível Socioeconômico)' },
         territorial: { title: 'Territorial', desc: 'Metropolitana vs não-metropolitana, urbana vs rural' }
       },
       cta: 'Ver análise completa de equidade'
@@ -73,7 +73,7 @@ const i18n = {
       cta: 'Ver todas as notícias'
     },
     destaques: {
-      title: 'Casos de Destaque',
+      title: 'Destaques',
       subtitle: 'Escolas, redes e municípios que se destacaram por qualidade, equidade, crescimento e boas práticas.',
       criterios: 'Critérios de destaque: redução do Abaixo do Básico, equilíbrio entre padrões, crescimento sustentado, redução de desigualdades e engajamento da comunidade.'
     },
@@ -108,7 +108,7 @@ const i18n = {
 
   en: {
     site_name: 'Saeb360 RN',
-    tagline: 'Basic Education Assessment System of Rio Grande do Norte',
+    tagline: 'Overview of Basic Education in Rio Grande do Norte',
     nav: {
       home: 'Home',
       etapas: 'Stages',
@@ -175,7 +175,7 @@ const i18n = {
       cta: 'See all news'
     },
     destaques: {
-      title: 'Spotlight Cases',
+      title: 'Spotlights',
       subtitle: 'Schools, networks and municipalities that stood out for quality, equity, growth and good practices.',
       criterios: 'Spotlight criteria: reduction of Below Basic, balance between standards, sustainable growth, reduction of inequalities and community engagement.'
     },
@@ -210,7 +210,7 @@ const i18n = {
 
   es: {
     site_name: 'Saeb360 RN',
-    tagline: 'Sistema de Evaluación de la Educación Básica de Río Grande del Norte',
+    tagline: 'Panorama general de la Educación Básica en Río Grande del Norte',
     nav: {
       home: 'Inicio',
       etapas: 'Etapas',
@@ -277,7 +277,7 @@ const i18n = {
       cta: 'Ver todas las noticias'
     },
     destaques: {
-      title: 'Casos de Destaque',
+      title: 'Destaques',
       subtitle: 'Escuelas, redes y municipios que se destacaron por calidad, equidad, crecimiento y buenas prácticas.',
       criterios: 'Criterios de destaque: reducción del Por Debajo del Básico, equilibrio entre estándares, crecimiento sostenido, reducción de desigualdades y compromiso de la comunidad.'
     },
