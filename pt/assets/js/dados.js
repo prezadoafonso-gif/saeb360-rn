@@ -12,8 +12,8 @@ const DADOS = {
       "Todos pela Educação - Panorama RN 2023",
       "IBGE - GeoJSON municípios RN"
     ],
-    responsavel: "SUAVE/SEEC/RN - Afonso Gomes Ferreira Filho",
-    nota_2025: "Resultados SAEB 2025 preliminares. IDEB estimado. Divulgação oficial INEP prevista para 08/06/2026."
+    responsavel: "Afonso Gomes",
+    nota_2025: "Resultados SAEB 2025 preliminares. IDEB estimado. Divulgação oficial INEP prevista para junho/2026."
   },
 
   panorama: {
@@ -85,7 +85,7 @@ const DADOS = {
 
   diretorias: [
     { id: "01", nome: "DRE Natal", tipo: "metropolitana" },
-    { id: "02", nome: "DRE Mossoró", tipo: "não-metropolitana" },
+    { id: "02", nome: "DRE Mossoró", tipo: "metropolitana" },
     { id: "03", nome: "DRE Caicó", tipo: "não-metropolitana" },
     { id: "04", nome: "DRE Currais Novos", tipo: "não-metropolitana" },
     { id: "05", nome: "DRE Apodi", tipo: "não-metropolitana" },
@@ -104,7 +104,7 @@ const DADOS = {
 
   municipios: [
     { nome: "Natal", cod: "240810", ideb_2023_ai: 5.2, ideb_2023_af: 3.9, ideb_2023_em: 3.5, pop: 896708, tipo: "metropolitana", direc: "01" },
-    { nome: "Mossoró", cod: "240800", ideb_2023_ai: 4.8, ideb_2023_af: 3.5, ideb_2023_em: 3.1, pop: 300618, tipo: "não-metropolitana", direc: "02" },
+    { nome: "Mossoró", cod: "240800", ideb_2023_ai: 4.8, ideb_2023_af: 3.5, ideb_2023_em: 3.1, pop: 300618, tipo: "metropolitana", direc: "02" },
     { nome: "Parnamirim", cod: "240325", ideb_2023_ai: 5.0, ideb_2023_af: 3.7, ideb_2023_em: 3.3, pop: 267036, tipo: "metropolitana", direc: "01" },
     { nome: "São Gonçalo do Amarante", cod: "241200", ideb_2023_ai: 4.6, ideb_2023_af: 3.4, ideb_2023_em: 3.0, pop: 109253, tipo: "metropolitana", direc: "16" },
     { nome: "Macau", cod: "240710", ideb_2023_ai: 4.5, ideb_2023_af: 3.3, ideb_2023_em: 2.9, pop: 62309, tipo: "não-metropolitana", direc: "08" },
