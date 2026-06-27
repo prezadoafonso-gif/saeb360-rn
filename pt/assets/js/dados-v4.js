@@ -9,7 +9,7 @@ const DADOS_BASE = {
     nome: "Saeb360 RN",
     versao: "4.0",
     atualizado: "2025-06-26",
-    nota: "Resultados SAEB 2025 preliminares. IDEB estimado. Dados de 2025 são estimativas com base em resultados preliminares das escolas e aplicação de fatores de ajuste para cálculo dos resultados da rede. Divulgação oficial INEP prevista para 2026."
+    nota: "Resultados SAEB 2025 preliminares. IDEB estimado. Dados de 2025 são estimativas com base em resultados preliminares das escolas e aplicação de fatores de ajuste para cálculo dos resultados da rede. Divulgação oficial INEP prevista para junho/2026."
   },
 
   // Conceitos explicados para o usuário
@@ -18,9 +18,9 @@ const DADOS_BASE = {
       titulo: "IDEB — Índice de Desenvolvimento da Educação Básica",
       definicao: "O IDEB é um indicador sintético que combina os resultados de proficiência dos estudantes (medidos pelo SAEB) com os fluxos escolares (taxas de aprovação, reprovação e distorção idade-série). Varia de 0 a 10. Foi criado em 2007 para medir a qualidade da educação básica no Brasil.",
       calculo: "IDEB = (Média de Proficiência em escala 0-10) × (Taxa de Aprovação / 100). A proficiência é convertida para escala 0-10 (dividindo por 500 e multiplicando por 10).",
-      utilidade: "Permite comparar escolas, municípios e estados ao longo do tempo. É o principal indicador para monitoramento do PNE (Plano Nacional de Educação).",
-      quem_usa: "Secretarias de Educação, gestores escolares, pesquisadores, conselhos de educação e sociedade civil para avaliar políticas públicas e alocar recursos.",
-      metas: "As metas do IDEB foram estabelecidas até 2021 (1º ciclo do IDEB) e estendidas a 2023. Não houve metas definidas para 2025. O PNE 2026 (Lei 15.388/2026) estabelece novas metas para o período 2024-2026."
+      utilidade: "Permite observar o desempenho e a evolução das redes de ensino ao longo dos anos, fornecendo informações sobre escolas, municípios, estados e sobre o país como um todo. É o principal indicador para monitoramento do PNE (Plano Nacional de Educação) e orientação das políticas educacionais do país. Uma compreensão aprofundada do IDEB requer a decomposição e análise situada dos seus componentes - fluxo, que informa o avanço na escolaridade; e proficiência, que reflete a aprendizagem. Os níveis de proficiência na escala SAEB são úteis para a compreensão acerca das habilidades e conhecimentos preconizadas na BNCC (Base Nacional Comum Curricular) que foram desenvolvidos pelos estudantes, sinalisando eventuais caminhos pedagógicos a se trilhar",
+      quem_usa: "Governos, Secretarias de Educação, gestores escolares, pesquisadores, conselhos de educação e sociedade civil para avaliar e redimensionar políticas públicas e alocar recursos. O IDEB é de menor utilidade direta para o professor, podendo, porém, ser útil quando se analisa o seu componente pedagógico",
+      metas: "As metas do IDEB foram estabelecidas até 2021 (1º ciclo do IDEB). Entre 2023 e 2025 não houve metas definidas. Porém, o PNE 2026 (Lei 15.388/2026) estabelece o monitoramento da qualidade educacional do país mediante indicadores produzidos pelo INEP (Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira) para o período 2026-2035."
     },
     ica: {
       titulo: "ICA — Indicador Criança Alfabetizada",
@@ -32,7 +32,7 @@ const DADOS_BASE = {
     },
     proficiencia: {
       titulo: "Proficiência — Escala SAEB",
-      definicao: "A proficiência é a medida de desempenho dos estudantes em Língua Portuguesa e Matemática, expressa em uma escala de 0 a 500 pontos. Cada ponto representa um nível de domínio de habilidades específicas.",
+      definicao: "A proficiência é a medida de desempenho dos estudantes em Língua Portuguesa e Matemática, expressa em uma escala de 0 a 500 pontos (para 5º EF, 9º EF e 3ª EM) e 1.000 pontos (para a alfabetização - 2º EF). Cada ponto representa um nível de domínio de habilidades específicas.",
       utilidade: "Permite acompanhar a evolução da aprendizagem ao longo dos anos, comparar etapas, identificar gargalos por habilidade e diagnosticar necessidades de reforço.",
       quem_usa: "Professores (para planejamento), gestores (para alocação de recursos), pesquisadores (para análise de políticas), e pais (para acompanhar a escola)."
     },
@@ -115,7 +115,7 @@ const DADOS_BASE = {
       ],
       participacao: 85,
       nivel: 4,
-      nota: "O ICA é calculado pelo INEP/MEC a partir das avaliações censitárias dos sistemas estaduais de avaliação, organizadas em complementaridade ao SAEB. Ponto de corte: 743 pontos na escala SAEB do 2º ano. A BNCC (Resolução CNE/CP nº 2/2017) determina que a criança deve estar alfabetizada ao término do 2º ano do EF."
+      nota: "O ICA é calculado pelo INEP/MEC a partir das avaliações censitárias dos sistemas estaduais de avaliação, organizadas em complementaridade ao SAEB. Ponto de corte: 743 pontos na escala SAEB do 2º ano. No RN, as avaliações da alfabetização são realizadas pelo SIMAIS (Sistema Integrado de Monitoramento e Avaliação Institucional da Rede Pública de Ensino), por meio da sua vertente SIMAIS Alfa. A BNCC (Resolução CNE/CP nº 2/2017) determina que a criança deve estar alfabetizada ao término do 2º ano do EF."
     }
   },
 
