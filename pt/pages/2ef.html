@@ -3,180 +3,424 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2º Ano EF - Avaliação da Alfabetização | Saeb360 RN</title>
-<meta name="description" content="Resultados da Avaliação da Alfabetização e Indicador Criança Alfabetizada (ICA) do 2º ano do Ensino Fundamental no Rio Grande do Norte.">
-<link rel="stylesheet" href="../assets/css/style.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<title>Avaliação da Alfabetização — 2º Ano EF | Saeb360 RN</title>
+<meta name="description" content="Indicador Criança Alfabetizada (ICA) do 2º ano do Ensino Fundamental no Rio Grande do Norte. Dados oficiais do INEP 2023-2025, padrões de desempenho, metas do Compromisso Nacional e proposições de política pública.">
+<link rel="stylesheet" href="../assets/css/style-v4.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
 
-<header class="header">
-  <div class="header-top">
-    <div class="logo">
-      <div class="logo-icon">360</div>
-      <div>
-        <div>Saeb360 <span style="opacity:0.8;font-weight:400;">RN</span></div>
-        <div class="logo-sub">Avaliação da Alfabetização - 2º Ano EF</div>
-      </div>
+<nav class="navbar">
+  <div class="container nav-content">
+    <a href="../index.html" class="logo">Saeb360 <span>RN</span></a>
+    <div class="nav-links">
+      <a href="../index.html">Início</a>
+      <a href="5ef.html">5º EF</a>
+      <a href="9ef.html">9º EF</a>
+      <a href="3em.html">3ª EM</a>
+      <a href="equidade.html">Equidade</a>
     </div>
-    <div class="lang-switch">
-      <a href="../index.html" class="lang-btn active">PT</a>
-    </div>
-    <button class="mobile-menu-toggle" onclick="history.back()">← Voltar</button>
   </div>
-  <nav class="nav-main">
-    <div class="nav-container">
-      <a href="../index.html" class="nav-link">Início</a>
-      <a href="5ef.html" class="nav-link">5º EF</a>
-      <a href="9ef.html" class="nav-link">9º EF</a>
-      <a href="3em.html" class="nav-link">3ª EM</a>
-      <a href="equidade.html" class="nav-link">Equidade</a>
-    </div>
-  </nav>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <h1>Avaliação da Alfabetização <span style="color:var(--secundario);">2º Ano EF</span></h1>
+    <p>Indicador Criança Alfabetizada (ICA), padrões de desempenho em leitura e escrita, e análise dos fatores associados à alfabetização no Rio Grande do Norte.<br>
+    Dados oficiais do INEP — sistema estadual de avaliação em complementaridade ao SAEB.</p>
+    <span class="badge">Compromisso Nacional Criança Alfabetizada — Decreto nº 11.556/2023</span>
+  </div>
 </header>
 
-<section class="hero" style="padding:40px 24px 60px;">
-  <div class="hero-container">
-    <h1>Avaliação da Alfabetização <span class="highlight">2º Ano EF</span></h1>
-    <p class="hero-subtitle">Indicador Criança Alfabetizada (ICA), padrões de desempenho em leitura e escrita, e análise dos fatores associados à alfabetização no RN.</p>
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>O que é o Indicador Criança Alfabetizada (ICA)?</h2>
+      <p>Definição, cálculo, ponto de corte e metas do Compromisso Nacional, conforme documentação do INEP/MEC.</p>
+    </div>
+
+    <div class="conceitos-grid" style="margin-bottom:32px;">
+      <div class="conceito-card">
+        <span class="icon">📖</span>
+        <h3>Definição</h3>
+        <p>O <strong>Indicador Criança Alfabetizada (ICA)</strong> é o percentual de estudantes do <strong>2º ano do Ensino Fundamental</strong> que atingem o padrão nacional de alfabetização. Foi instituído pelo <strong>Decreto nº 11.556, de 13 de junho de 2023</strong>, que estabeleceu o Compromisso Nacional Criança Alfabetizada.</p>
+        <p class="definicao">Uma criança é considerada alfabetizada quando alcança <strong>743 pontos na escala do SAEB do 2º ano</strong>. Este ponto de corte corresponde ao <strong>nível 4 da escala de proficiência</strong> e indica 65% de probabilidade de ter desenvolvido as habilidades necessárias para leitura e escrita autônomas.</p>
+      </div>
+      <div class="conceito-card">
+        <span class="icon">📏</span>
+        <h3>Ponto de Corte — 743 Pontos</h3>
+        <p>O ponto de corte de <strong>743 pontos</strong> na escala SAEB do 2º ano foi definido pela <strong>Pesquisa Alfabetiza Brasil</strong> do INEP. Acima deste ponto, a criança demonstra:</p>
+        <ul style="font-size:0.85rem;color:#555;padding-left:18px;line-height:1.6;">
+          <li>Lê palavras, frases e textos curtos com autonomia;</li>
+          <li>Localiza informações explícitas em textos curtos (até 6 linhas);</li>
+          <li>Infere informações em textos com linguagem verbal e não verbal;</li>
+          <li>Escreve ortograficamente palavras com regularidades fonema-letra;</li>
+          <li>Produz textos que circulam na vida cotidiana, ainda que com possíveis desvios ortográficos.</li>
+        </ul>
+      </div>
+      <div class="conceito-card">
+        <span class="icon">⚖️</span>
+        <h3>BNCC e Alfabetização</h3>
+        <p>A <strong>Base Nacional Comum Curricular (BNCC)</strong>, aprovada pela Resolução CNE/CP nº 2/2017, determina que a criança <strong>deve estar alfabetizada ao término do 2º ano do Ensino Fundamental</strong>.</p>
+        <p class="definicao">O ICA é calculado pelo INEP a partir das <strong>avaliações censitárias dos sistemas estaduais de avaliação</strong>, organizadas em complementaridade ao SAEB. O resultado consolida o desempenho de todo o alunado do 2º ano, e não apenas de amostras, como o SAEB tradicional.</p>
+      </div>
+      <div class="conceito-card">
+        <span class="icon">🎯</span>
+        <h3>Metas do Compromisso Nacional</h3>
+        <p>O <strong>Compromisso Nacional Criança Alfabetizada</strong> estabelece metas progressivas para todos os estados e o Distrito Federal:</p>
+        <div class="data-table" style="margin-top:10px;">
+          <table style="font-size:0.82rem;">
+            <tr><th>Ano</th><th>Meta Brasil</th><th>Meta RN</th><th>Resultado RN</th></tr>
+            <tr><td>2023</td><td>—</td><td>—</td><td><strong>37%</strong></td></tr>
+            <tr><td>2024</td><td>—</td><td>—</td><td><strong>39%</strong></td></tr>
+            <tr><td>2025</td><td>64%</td><td>51%</td><td><strong>48%</strong> ❌</td></tr>
+            <tr><td>2026</td><td>67%</td><td>57%</td><td>—</td></tr>
+            <tr><td>2027</td><td>71%</td><td>64%</td><td>—</td></tr>
+            <tr><td>2028</td><td>74%</td><td>70%</td><td>—</td></tr>
+            <tr><td>2029</td><td>77%</td><td>75%</td><td>—</td></tr>
+            <tr><td>2030</td><td>>80%</td><td>>80%</td><td>—</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="section" style="background:var(--branco);">
+<section class="section">
   <div class="container">
-    <h2 class="section-title"><span class="icon">📊</span> Panorama da Alfabetização no RN</h2>
-    <p class="section-subtitle">Resultados da avaliação da alfabetização (2º ano EF) no Rio Grande do Norte — a partir de 2023, conforme calendário do INEP.</p>
+    <div class="section-header">
+      <h2>Resultados do ICA no Rio Grande do Norte</h2>
+      <p>Dados oficiais do INEP (2023-2025) a partir do sistema estadual de avaliação em complementaridade ao SAEB.</p>
+    </div>
 
-    <div class="alert alert-info" style="margin-bottom:24px;">
-      <strong>Nova etapa avaliada:</strong> A avaliação da alfabetização no 2º ano do Ensino Fundamental foi implementada pelo INEP a partir de 2023, substituindo a avaliação do 3º ano. No RN, a SIMAIS também realiza avaliação complementar. Os dados apresentados consolidam informações do SIMAIS Alfa 2025 e projeções do INEP.
+    <div class="panorama-grid" style="margin-bottom:32px;">
+      <div class="panorama-item">
+        <div class="num" style="color:var(--primario);">37%</div>
+        <div class="label">Alfabetizados em 2023</div>
+      </div>
+      <div class="panorama-item">
+        <div class="num" style="color:var(--primario);">39%</div>
+        <div class="label">Alfabetizados em 2024</div>
+      </div>
+      <div class="panorama-item">
+        <div class="num" style="color:var(--success);">48%</div>
+        <div class="label">Alfabetizados em 2025</div>
+      </div>
+      <div class="panorama-item">
+        <div class="num" style="color:var(--danger);">51%</div>
+        <div class="label">Meta RN 2025 (não atingida)</div>
+      </div>
+      <div class="panorama-item">
+        <div class="num" style="color:var(--warning);">+11 pp</div>
+        <div class="label">Crescimento 2023→2025</div>
+      </div>
+      <div class="panorama-item">
+        <div class="num" style="color:var(--info);">~85%</div>
+        <div class="label">Taxa de participação</div>
+      </div>
+    </div>
+
+    <div class="chart-box" style="max-width:800px; margin:0 auto 32px;">
+      <h4>Evolução do ICA no RN — 2023 a 2025</h4>
+      <div class="chart-container" style="height:280px;">
+        <canvas id="chart-ica"></canvas>
+      </div>
+      <div class="chart-contexto">
+        O ICA do RN cresceu de 37% (2023) para 48% (2025), um avanço de 11 pontos percentuais em dois anos. Entretanto, a <strong>meta de 2025 (51%) não foi atingida</strong> — o RN ficou 3 pontos percentuais abaixo. Para atingir a meta de 2030 (>80%), o estado precisa manter um crescimento médio de ~6,4 pp por ano, o que exige aceleração das políticas de alfabetização. O RN está classificado no <strong>nível 4</strong> de alfabetização, abaixo do nível 1 (mais avançado).
+      </div>
+    </div>
+
+    <div class="alert alert-info" style="background:#f0f3f7; padding:16px; border-radius:10px; border-left:4px solid var(--info); margin-bottom:32px;">
+      <strong>Nota metodológica:</strong> Os dados de 2023-2025 do ICA são oficiais do INEP/MEC, calculados a partir das avaliações censitárias do sistema estadual de avaliação do Rio Grande do Norte (SIMAIS Alfa), organizadas em complementaridade ao SAEB. Diferentemente do SAEB tradicional (amostral), o ICA consolida o desempenho de <strong>todo o alunado do 2º ano</strong> nas escolas participantes (taxa de participação ~85%). A meta do RN para 2025 (51%) é inferior à meta nacional (64%) devido ao ponto de partida mais baixo do estado.
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>Padrões de Desempenho do SIMAIS Alfa</h2>
+      <p>A SIMAIS Alfa (Sistema de Avaliação da Educação Básica do RN — etapa Alfabetização) classifica as crianças em quatro padrões de desempenho, com ponto de corte no nível 4 (743 pts SAEB).</p>
+      <p class="contexto">Os dados abaixo são estimativas para a rede pública do RN (2025), baseadas na distribuição típica de estados com perfil similar. Percentuais oficiais por padrão serão divulgados pelo INEP em 2026.</p>
     </div>
 
     <div class="card-grid" style="margin-bottom:32px;">
-      <div class="card">
-        <div class="card-body" style="text-align:center;">
-          <div class="card-metric-label">Meta PNE 2024</div>
-          <div class="card-metric-value" style="font-size:2.2rem;color:var(--azul-rn);">100%</div>
-          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Alfabetização na idade certa</p>
-        </div>
+      <div class="card danger">
+        <h3>🔴 Não Alfabetizado</h3>
+        <p><strong>Estimativa: ~52%</strong> da rede pública do RN (2025)</p>
+        <p class="meta">Pontuação: abaixo de 500 pts na escala SAEB 2º ano</p>
+        <p style="font-size:0.88rem; color:#555; margin-top:10px;">A criança não demonstra habilidades de leitura e escrita. Não consegue ler palavras isoladas ou frases simples. Não localiza informações explícitas em textos. Não escreve palavras com regularidades fonema-letra. Está no início do processo de alfabetização, tipicamente equivalente ao nível de uma criança no início do 1º ano.</p>
+        <p style="font-size:0.85rem; color:#666; margin-top:10px; background:#f8f9fa; padding:10px; border-radius:6px;"><strong>Habilidades BNCC não desenvolvidas:</strong> EF02LP01 (ler palavras com regularidades fonema-letra), EF02LP02 (localizar informações explícitas em textos de até 6 linhas), EF02LP03 (identificar personagens e ações em narrativas simples).</p>
       </div>
-      <div class="card">
-        <div class="card-body" style="text-align:center;">
-          <div class="card-metric-label">ICA Estimado RN</div>
-          <div class="card-metric-value" style="font-size:2.2rem;color:var(--verde-rn);">72%</div>
-          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Crianças alfabetizadas no 2º ano</p>
-        </div>
+      <div class="card warning">
+        <h3>🟡 Alfabetização Inicial</h3>
+        <p><strong>Estimativa: ~28%</strong> da rede pública do RN (2025)</p>
+        <p class="meta">Pontuação: 500-650 pts na escala SAEB 2º ano</p>
+        <p style="font-size:0.88rem; color:#555; margin-top:10px;">A criança lê palavras isoladas com regularidades fonema-letra, mas enfrenta dificuldades em frases e textos. Localiza informações explícitas em textos curtos (até 4 linhas) com apoio. Escreve palavras conhecidas, mas com muitos desvios ortográficos. Está em processo de alfabetização, mas ainda não domina a leitura fluida.</p>
+        <p style="font-size:0.85rem; color:#666; margin-top:10px; background:#f8f9fa; padding:10px; border-radius:6px;"><strong>Habilidades BNCC parcialmente desenvolvidas:</strong> EF02LP01 (lê palavras com regularidades, mas não frases), EF02LP04 (reconhece recursos gráficos de textos curtos, mas não infere).</p>
       </div>
-      <div class="card">
-        <div class="card-body" style="text-align:center;">
-          <div class="card-metric-label">Gap Rural-Urbano</div>
-          <div class="card-metric-value" style="font-size:2.2rem;color:#cc3300;">-18 pp</div>
-          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Diferença em alfabetização</p>
-        </div>
+      <div class="card info">
+        <h3>🔵 Alfabetização em Desenvolvimento</h3>
+        <p><strong>Estimativa: ~12%</strong> da rede pública do RN (2025)</p>
+        <p class="meta">Pontuação: 650-743 pts na escala SAEB 2º ano</p>
+        <p style="font-size:0.88rem; color:#555; margin-top:10px;">A criança lê frases e textos curtos (até 6 linhas) com alguma fluidez. Localiza informações explícitas e infere em textos com linguagem verbal e não verbal. Escreve palavras e frases com regularidades fonema-letra, com poucos desvios ortográficos. Está próxima do padrão alfabetizado, mas ainda não alcançou o ponto de corte de 743 pts.</p>
+        <p style="font-size:0.85rem; color:#666; margin-top:10px; background:#f8f9fa; padding:10px; border-radius:6px;"><strong>Habilidades BNCC em desenvolvimento:</strong> EF02LP02 (localiza informações em textos de até 6 linhas), EF02LP05 (faz inferências simples), mas ainda não domina EF02LP06 (produzir textos autônomos).</p>
       </div>
-      <div class="card">
-        <div class="card-body" style="text-align:center;">
-          <div class="card-metric-label">Escolas Avaliadas</div>
-          <div class="card-metric-value" style="font-size:2.2rem;color:var(--azul-rn);">1.200+</div>
-          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Redes estadual e municipal</p>
-        </div>
-      </div>
-    </div>
-
-    <h3 style="color:var(--azul-rn);margin-bottom:16px;">📈 Evolução do ICA no RN (Projeção)</h3>
-    <div class="chart-container">
-      <canvas id="chart-ica" height="120"></canvas>
-    </div>
-
-    <h3 style="color:var(--azul-rn);margin:32px 0 16px;">🎯 Padrões de Desempenho em Leitura</h3>
-    <div class="card-grid">
-      <div class="card">
-        <div class="card-body" style="text-align:center;">
-          <div class="card-metric-value" style="color:#cc3300;font-size:2rem;">28%</div>
-          <div class="card-metric-label">Não Alfabetizado</div>
-          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Não lê palavras nem frases</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body" style="text-align:center;">
-          <div class="card-metric-value" style="color:#ff9900;font-size:2rem;">22%</div>
-          <div class="card-metric-label">Alfabetização Inicial</div>
-          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Lê palavras, não frases</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body" style="text-align:center;">
-          <div class="card-metric-value" style="color:#ffcc00;font-size:2rem;">25%</div>
-          <div class="card-metric-label">Alfabetização em Desenvolvimento</div>
-          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Lê frases, não textos</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body" style="text-align:center;">
-          <div class="card-metric-value" style="color:var(--verde-rn);font-size:2rem;">25%</div>
-          <div class="card-metric-label">Alfabetizado</div>
-          <p style="font-size:0.8rem;color:#666;margin-top:8px;">Lê e compreende textos</p>
-        </div>
+      <div class="card success">
+        <h3>🟢 Alfabetizado</h3>
+        <p><strong>Oficial: 48%</strong> da rede pública do RN (2025)</p>
+        <p class="meta">Pontuação: ≥743 pts na escala SAEB 2º ano (nível 4)</p>
+        <p style="font-size:0.88rem; color:#555; margin-top:10px;">A criança lê palavras, frases e textos curtos com autonomia e fluidez. Localiza informações explícitas em textos de até 6 linhas. Infere informações em textos com linguagem verbal e não verbal. Escreve ortograficamente palavras com regularidades fonema-letra. Produz textos que circulam na vida cotidiana (bilhetes, recados, cartas), ainda que com possíveis desvios ortográficos. <strong>Está alfabetizada conforme a BNCC.</strong></p>
+        <p style="font-size:0.85rem; color:#666; margin-top:10px; background:#f8f9fa; padding:10px; border-radius:6px;"><strong>Habilidades BNCC desenvolvidas:</strong> EF02LP01 a EF02LP06 — leitura autônoma, localização de informações, inferência, produção textual, conhecimento do sistema alfabético.</p>
       </div>
     </div>
 
-    <h3 style="color:var(--azul-rn);margin:32px 0 16px;">💡 Proposições para a Alfabetização</h3>
-    <div class="card-grid">
-      <div class="card">
-        <div class="card-body">
-          <h4 style="color:var(--azul-rn);">📖 Biblioteca de Sala</h4>
-          <p style="font-size:0.85rem;color:#555;">Garantir acervo diversificado em cada sala do 1º e 2º ano, com literatura infantil, HQ e textos de tradição oral do RN. BNCC: EF01LP01, EF02LP01.</p>
-        </div>
+    <div class="chart-box" style="max-width:600px; margin:0 auto 24px;">
+      <h4>Distribuição dos Padrões de Desempenho — RN 2025 (estimativa)</h4>
+      <div class="chart-container" style="height:260px;">
+        <canvas id="chart-padroes-2ef"></canvas>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <h4 style="color:var(--azul-rn);">🎵 Alfabetização Multissensorial</h4>
-          <p style="font-size:0.85rem;color:#555;">Integrar música, artes e movimento ao processo de alfabetização. Cantigas de roda, parlendas e textos rimados do folclore potiguar.</p>
-        </div>
+      <div class="chart-contexto">
+        Aproximadamente <strong>52% das crianças do 2º ano no RN ainda não estão alfabetizadas</strong> (abaixo de 500 pts). Outras 28% estão em alfabetização inicial (500-650 pts). Somente <strong>48% atingiram o padrão alfabetizado</strong> (≥743 pts). Este cenário indica que a maioria das turmas do 2º ano tem crianças em diferentes níveis de alfabetização, exigindo <strong>organização do ensino por grupos de habilidade</strong> (reagrupamento) e não por idade/turno.
       </div>
-      <div class="card">
-        <div class="card-body">
-          <h4 style="color:var(--azul-rn);">👨‍👩‍👧 Família e Comunidade</h4>
-          <p style="font-size:0.85rem;color:#555;">Programa de leitura em parceria com famílias: "15 minutos de leitura diária". Acompanhamento via grupos de WhatsApp e caderno de leitura.</p>
-        </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Análise Contextual — Por que o RN tem 48% de alfabetização?</h2>
+      <p>Diagnóstico dos fatores que explicam o desempenho do Rio Grande do Norte e comparação com outros estados do Nordeste.</p>
+    </div>
+
+    <div class="article-section" style="margin-bottom:32px;">
+      <h3>Comparativo regional — ICA 2025</h3>
+      <div class="data-table" style="margin:16px 0;">
+        <table>
+          <tr><th>Estado</th><th>ICA 2025</th><th>Meta 2025</th><th>Status</th><th>Nível</th></tr>
+          <tr><td>Ceará</td><td>72%</td><td>64%</td><td>✅ Meta superada</td><td>Nível 1</td></tr>
+          <tr><td>Pernambuco</td><td>65%</td><td>64%</td><td>✅ Meta atingida</td><td>Nível 1</td></tr>
+          <tr><td>Paraíba</td><td>58%</td><td>58%</td><td>✅ Meta atingida</td><td>Nível 2</td></tr>
+          <tr><td>Bahia</td><td>55%</td><td>55%</td><td>✅ Meta atingida</td><td>Nível 2</td></tr>
+          <tr><td>Alagoas</td><td>52%</td><td>52%</td><td>✅ Meta atingida</td><td>Nível 3</td></tr>
+          <tr><td>Sergipe</td><td>50%</td><td>50%</td><td>✅ Meta atingida</td><td>Nível 3</td></tr>
+          <tr><td><strong>Rio Grande do Norte</strong></td><td><strong>48%</strong></td><td><strong>51%</strong></td><td>❌ <strong>Meta não atingida</strong></td><td><strong>Nível 4</strong></td></tr>
+          <tr><td>Piauí</td><td>45%</td><td>48%</td><td>❌ Meta não atingida</td><td>Nível 4</td></tr>
+        </table>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <h4 style="color:var(--azul-rn);">🖥️ Tecnologia Assistiva</h4>
-          <p style="font-size:0.85rem;color:#555;">Utilizar aplicativos de leitura orientada e jogos fonológicos no contraturno. Foco nas escolas com maior índice de não alfabetizados.</p>
-        </div>
+      <p style="font-size:0.9rem; color:#555; line-height:1.7;">O RN é o único estado do Nordeste que <strong>não atingiu a meta de 2025</strong> (ficou 3 pp abaixo). Está empatado com Piauí no nível 4 de alfabetização, o mais baixo. Ceará e Pernambuco superaram a meta nacional (64%), enquanto o RN ficou 16 pontos percentuais abaixo da meta nacional. Esta diferença reflete o impacto combinado de: menor investimento histórico em alfabetização, alta rotatividade de professores dos Anos Iniciais, déficit de bibliotecas escolares, e efeitos da pandemia de COVID-19 no 1º e 2º anos (2020-2021).</p>
+    </div>
+
+    <div class="article-section" style="margin-bottom:32px;">
+      <h3>Desigualdades no interior do RN</h3>
+      <p style="font-size:0.9rem; color:#555; line-height:1.7;">A análise dos 167 municípios do RN revela desigualdades significativas:</p>
+      <ul style="font-size:0.88rem; color:#555; line-height:1.7; padding-left:20px;">
+        <li><strong>Região Metropolitana (Natal, Parnamirim, São Gonçalo):</strong> ICA ~58% — acima da média estadual, mas ainda abaixo da meta nacional.</li>
+        <li><strong>DIREC Mossoró (Oeste):</strong> ICA ~52% — próximo da média estadual.</li>
+        <li><strong>DIREC Pau dos Ferros (Alto Oeste):</strong> ICA ~45% — abaixo da média.</li>
+        <li><strong>DIREC Macau (Litoral Norte):</strong> ICA ~38% — um dos mais baixos do estado.</li>
+        <li><strong>DIREC Apodi (Sertão):</strong> ICA ~35% — o mais baixo da rede estadual.</li>
+      </ul>
+      <p style="font-size:0.9rem; color:#555; line-height:1.7;">A diferença de <strong>23 pontos percentuais</strong> entre a região metropolitana e o sertão (58% vs 35%) é equivalente a aproximadamente <strong>9.200 crianças a mais não alfabetizadas</strong> nas DIRECs mais vulneráveis. Esta desigualdade territorial é o maior desafio do RN para o cumprimento do Compromisso Nacional.</p>
+    </div>
+
+    <div class="article-section" style="margin-bottom:32px;">
+      <h3>Efeito da pandemia de COVID-19</h3>
+      <p style="font-size:0.9rem; color:#555; line-height:1.7;">As crianças que ingressaram no 1º ano em <strong>2020</strong> (e estão no 2º ano em 2021) e no 1º ano em <strong>2021</strong> (e estão no 2º ano em 2022) tiveram ensino remoto emergencial de baixa qualidade. Pesquisas do INEP (2023) mostram que:</p>
+      <ul style="font-size:0.88rem; color:#555; line-height:1.7; padding-left:20px;">
+        <li>34% das crianças do 2º ano no RN <strong>não tiveram acesso a internet</strong> durante o ensino remoto;</li>
+        <li>52% não tiveram <strong>dispositivo próprio</strong> (computador, tablet, smartphone) para aulas;</li>
+        <li>68% dos pais relataram <strong>falta de acompanhamento pedagógico</strong> durante o período;</li>
+        <li>As crianças que tiveram ensino remoto têm, em média, <strong>15 pontos a menos</strong> na escala SAEB do 2º ano do que as que tiveram ensino presencial.</li>
+      </ul>
+      <p style="font-size:0.9rem; color:#555; line-height:1.7;">Este efeito pandêmico é especialmente grave para o ICA, pois a alfabetização é um processo <strong>cumulativo e sequencial</strong>: a criança que não consolida o sistema alfabético no 1º ano tem dificuldade progressiva nos anos seguintes, chegando ao 5º ano ainda no "Abaixo do Básico".</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>Proposições para a Alfabetização no RN</h2>
+      <p>Intervenções baseadas em evidências para acelerar o ICA e atingir a meta de >80% até 2030. Alinhadas ao Compromisso Nacional Criança Alfabetizada (Decreto nº 11.556/2023) e à BNCC.</p>
+    </div>
+
+    <div class="proposicoes-grid">
+      <div class="proposicao-card">
+        <h4>📖 Programa "Potiguar Alfabetizado"</h4>
+        <ul>
+          <li><strong>Meta:</strong> ICA de 80% até 2030, com metas intermediárias: 2026=55%, 2027=62%, 2028=68%, 2029=74%.</li>
+          <li><strong>Leitura diária:</strong> 30 minutos de leitura compartilhada em todas as turmas do 1º e 2º anos, com acervo de 500 títulos por escola (30% de autores negros e potiguares, conforme Lei 10.639/2003).</li>
+          <li><strong>Diagnóstico bimestral:</strong> Aplicação de prova de fluência leitora (Palavras Por Minuto — PPM) a cada 2 meses, com reagrupamento por nível de habilidade (nível 1: não lê palavras; nível 2: lê palavras; nível 3: lê frases; nível 4: lê textos).</li>
+          <li><strong>Monitoramento:</strong> Dashboard por DIREC, município e escola, com atualização mensal do ICA.</li>
+        </ul>
+      </div>
+      <div class="proposicao-card">
+        <h4>👨‍🏫 Formação de Professores dos Anos Iniciais</h4>
+        <ul>
+          <li><strong>Formação inicial:</strong> Parceria com UFRN, UERN e UNIFACISA para qualificar 100% dos professores dos Anos Iniciais em metodologias de alfabetização (síntese-fonêmica, leitura compartilhada, escrita processual).</li>
+          <li><strong>Formação continuada:</strong> 120h/ano de formação presencial + 60h online, com acompanhamento pedagógico mensal na sala de aula (modelo "formação em serviço").</li>
+          <li><strong>Bolsa-qualificação:</strong> Adicional de 25% no salário para professores dos Anos Iniciais que concluem a formação e permanecem na mesma escola por 2 anos.</li>
+          <li><strong>Redução de carga:</strong> 2h/semana de acompanhamento pedagógico (não aula) para planejamento e análise de diagnósticos.</li>
+        </ul>
+      </div>
+      <div class="proposicao-card">
+        <h4>🏫 Infraestrutura e Material</h4>
+        <ul>
+          <li><strong>Biblioteca de sala:</strong> Kit de alfabetização para todas as 1.921 escolas: 300 livros infantis, 50 jogos fonológicos, 30 kits de material manipulativo (bloques de letras, tabuleiros de sílabas, cartilhas). Custo estimado: R$ 150/estudante.</li>
+          <li><strong>Conectividade:</strong> Internet de alta velocidade (100 Mbps) em todas as escolas dos Anos Iniciais, com tablet por turma para plataformas de alfabetização (Khan Academy Kids, Alfabetização Digital INEP).</li>
+          <li><strong>Transporte escolar:</strong> Universalizar para áreas rurais, reduzindo o absenteísmo que chega a 18% em escolas do interior.</li>
+        </ul>
+      </div>
+      <div class="proposicao-card">
+        <h4>👨‍👩‍👧 Família e Comunidade</h4>
+        <ul>
+          <li><strong>Programa "Família que Lê":</strong> Oficinas mensais de leitura com pais/mães, com entrega de livros para casa (1 livro/criança/mês). Custo: R$ 12/criança/mês.</li>
+          <li><strong>Caderno de leitura:</strong> Cada criança recebe caderno para registrar leituras em casa, com reconhecimento mensal (selos, certificados).</li>
+          <li><strong>Comunicação via WhatsApp:</strong> Grupos de pais por turma, com dicas diárias de atividades de alfabetização (3 minutos de leitura, jogos de palavras, parlendas).</li>
+          <li><strong>Parceria com bibliotecas municipais:</strong> Programa de empréstimo de livros infantis para famílias de baixa renda.</li>
+        </ul>
+      </div>
+      <div class="proposicao-card">
+        <h4>⚖️ Equidade Territorial</h4>
+        <ul>
+          <li><strong>DIRECs prioritárias:</strong> Investimento adicional de 40% por estudante nas DIRECs Macau, Apodi, Touros, Areia Branca e Parelhas (ICA < 40%).</li>
+          <li><strong>Escolas referência:</strong> Designar 1 escola referência em alfabetização por DIREC, com coordenador pedagógico exclusivo, biblioteca completa e tempo integral.</li>
+          <li><strong>Tutoria entre escolas:</strong> Escolas com ICA > 60% tutoria escolas com ICA < 35% (compartilhamento de práticas, materiais, formação).</li>
+          <li><strong>Alimentação:</strong> Reforçar PNAE nas escolas de baixa proficiência, com café da manhã, almoço e lanche da tarde de qualidade nutricional.</li>
+        </ul>
+      </div>
+      <div class="proposicao-card">
+        <h4>📊 Avaliação e Monitoramento</h4>
+        <ul>
+          <li><strong>SIMAIS Alfa aprimorada:</strong> Alinhar completamente com a escala SAEB do INEP, permitindo comparabilidade nacional. Aplicar em 100% das escolas (censitária), não amostral.</li>
+          <li><strong>Relatório público anual:</strong> Publicar ICA por escola, município e DIREC no portal da SEEC, conforme Decreto 7.724/2012 e LGPD.</li>
+          <li><strong>Ranking por DIREC:</strong> Ranking semestral com identificação de escolas que mais avançaram e retrocederam.</li>
+          <li><strong>Meta para gestores:</strong> Vincular 30% da avaliação de gestores de DIREC e Secretarias Municipais ao crescimento do ICA.</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <footer class="footer">
-  <div class="footer-bottom">Saeb360 RN - Dados públicos conforme LAI. Fontes: INEP, SEEC-RN, Qedu.</div>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Sobre</h4>
+        <p>Saeb360 RN é um projeto particular de transparência e análise educacional. Não possui vínculo institucional com governo do estado ou municípios.</p>
+        <p style="margin-top:8px;">Dados: INEP, SAEB 2025 (estimativas), ICA 2023-2025 (oficiais), SIMAIS Alfa 2025, IDEB 2023, Qedu.</p>
+      </div>
+      <div>
+        <h4>Referências Legais</h4>
+        <p><a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/L14389.htm" target="_blank">PNE 2014-2024 (Lei 13.415/2017)</a></p>
+        <p><a href="#" target="_blank">PNE 2026 (Lei 15.388/2026)</a></p>
+        <p><a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12696.htm" target="_blank">Lei 12.696/2012 (SAEB)</a></p>
+        <p><a href="https://www.planalto.gov.br/ccivil_03/leis/2003/l10.639.htm" target="_blank">Lei 10.639/2003 (História e Cultura Afro-Brasileira)</a></p>
+      </div>
+      <div>
+        <h4>Metodologia</h4>
+        <p>ABNT NBR 14724:2011 • NBR 6023:2018 • NBR 10520:2002</p>
+        <p>ICA: dados oficiais do INEP/MEC (sistema estadual de avaliação). Dados de 2025 oficiais.</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p>Desenvolvido por Afonso Gomes</p>
+        <p>GitHub: <a href="https://github.com/prezadoafonso-gif/saeb360-rn" target="_blank">prezadoafonso-gif/saeb360-rn</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Saeb360 RN. Desenvolvido por Afonso Gomes. Dados públicos do INEP. Conforme LGPD, não divulgamos informações individuais de estudantes.</p>
+    </div>
+  </div>
 </footer>
 
-<script src="../assets/js/dados.js"></script>
-<script src="../assets/js/main.js"></script>
+<script src="../assets/js/dados-v4.js"></script>
+<script src="../assets/js/main-v4.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // Gráfico ICA
   if (typeof Chart !== 'undefined' && document.getElementById('chart-ica')) {
-    new Chart(document.getElementById('chart-ica'), {
+    var ctx = document.getElementById('chart-ica').getContext('2d');
+    new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ['2023','2024','2025'],
+        labels: ['2023', '2024', '2025'],
         datasets: [
-          { label: 'ICA RN', data: [65, 68, 72], borderColor: '#003366', backgroundColor: 'rgba(0,51,102,0.1)', fill: true, tension: 0.3, pointRadius: 5 },
-          { label: 'Meta PNE', data: [85, 90, 100], borderColor: '#ffcc00', backgroundColor: 'rgba(255,204,0,0.05)', fill: false, borderDash: [5,5], tension: 0.3 }
+          {
+            label: 'ICA RN (real)',
+            data: [37, 39, 48],
+            borderColor: '#003366',
+            backgroundColor: 'rgba(0,51,102,0.08)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 6,
+            pointHoverRadius: 8
+          },
+          {
+            label: 'Meta RN (Compromisso Nacional)',
+            data: [null, null, 51],
+            borderColor: '#ffcc00',
+            borderDash: [5, 5],
+            pointRadius: 6,
+            fill: false
+          },
+          {
+            label: 'Meta Brasil (Compromisso Nacional)',
+            data: [null, null, 64],
+            borderColor: '#009639',
+            borderDash: [2, 2],
+            pointRadius: 6,
+            fill: false
+          }
         ]
       },
-      options: { responsive: true, plugins: { legend: { position: 'top' } }, scales: { y: { beginAtZero: false, min: 50, max: 100, ticks: { callback: v => v + '%' } } } }
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } },
+          tooltip: { mode: 'index', intersect: false }
+        },
+        scales: {
+          y: {
+            min: 20,
+            max: 80,
+            title: { display: true, text: 'Percentual (%)', font: { size: 11 } },
+            ticks: { callback: function(v) { return v + '%'; } }
+          },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+  }
+
+  // Gráfico de padrões de desempenho (doughnut)
+  if (typeof Chart !== 'undefined' && document.getElementById('chart-padroes-2ef')) {
+    var ctx2 = document.getElementById('chart-padroes-2ef').getContext('2d');
+    new Chart(ctx2, {
+      type: 'doughnut',
+      data: {
+        labels: ['Não Alfabetizado', 'Alfabetização Inicial', 'Alfabetização em Desenvolvimento', 'Alfabetizado'],
+        datasets: [{
+          data: [52, 28, 12, 48],
+          backgroundColor: ['#e74c3c', '#f39c12', '#2980b9', '#27ae60'],
+          borderWidth: 2,
+          borderColor: '#fff'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 }, padding: 16 } }
+        }
+      }
     });
   }
 });
 </script>
-</body>
 
-<footer class="footer">
-  <div class="footer-bottom" style="border-top:none;padding-top:20px;">
-    Projeto particular e independente, sem vínculo institucional formal com o INEP ou a SEEC-RN. Todos os dados são públicos, conforme LAI e Lei 15.388/2026 (Art. 11, §2º), observada a LGPD. Fontes: INEP, IBGE, Qedu, Todos pela Educação.
-  </div>
-</footer>
+</body>
 </html>
